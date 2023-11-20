@@ -1,0 +1,169 @@
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>franklymade.tech</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'blog/css/blog-home.css' %}" rel="stylesheet">
+  <link href="{% static 'css/blogstyle.css' %}" rel="stylesheet">
+  <link href="{% static 'sitetemplate/css/blogstyle.css' %}" rel="stylesheet"> 
+
+
+  <!-- <link href="{% static 'images' %}" rel="stylesheet"> -->
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'franklymade'%}">franklymade</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'franklymade'%}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about_blog' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'python_intro' %}"><small>Learn To Code</small> </a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+ <!-- *(((((((((((((this is where the page content is located))))))))))))) -->
+
+ <!-- this is going to be the page showcase image -->
+ 
+        <!-- Page Heading/Breadcrumbs -->
+<!-- <div class="container">
+<h1 class="mt-4 mb-8 text-center">FranklyMade Blog
+  <small></small>
+  </h1>
+  <h5> </h5>
+  <h5></h5>
+
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+      <a href="#">Home</a>
+  </li>
+  <li class="breadcrumb-item active">Latest Tech News</li>
+  </ol>
+
+</div> -->
+ {% block content %}
+ {% endblock %}
+ <!-- ***************************************** -->
+         
+ 
+        <!-- Pagination -->
+        
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4 ">
+
+        <!-- Search Widget -->
+        <!-- <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Categories Widget -->
+        <!-- <div class="card my-4 mt-8">
+          <h5 class="card-header">Learn To Code</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">Web Design</a>
+                  </li>
+                  <li>
+                    <a href="#">HTML</a>
+                  </li>
+                  <li>
+                    <a href="#">JavaScript</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#">Python</a>
+                  </li>
+                  <li>
+                    <a href="#">django</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Side Widget -->
+        <!-- <div class="card my-4">
+          <h5 class="card-header">Inspirational Quotes</h5>
+          <div class="card-body">
+            Get a daily dose of inpirational quote that will inpire you to greatness
+          </div>
+        </div> -->
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; franklymade.tech</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

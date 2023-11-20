@@ -1,0 +1,96 @@
+<!-- {% extends 'sitetemplate/pythonbase.html' %} -->
+
+
+{% block content %}
+ 
+        <br>
+        <h3>While Loops</h3>
+         <p>
+            A while loop is very similar to a for loop.
+            it simply continues to do something while 
+            given condition is true . We typically use while 
+            loops when we are unsure about how many time we may 
+            possibly be looping  ( or repeating something)
+            The syntax looks something like this:
+         </p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87; font-weight: bold;">while</span> <span style="color: #000000;">condition</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #3465a4;">True</span><span style="color: #000000; font-weight: bold;">:</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"I will run until the conditon is False"</span><span style="color: #000000; font-weight: bold;">)</span>
+    </pre>
+    </div><br>
+
+      <h3>Breaking a Loop</h3>
+      <p>Sometimes while we are looping we may encounter a 
+          situation where we want to exit the loop. It
+           may be the case that the condition keeping the
+            loop running is still True but we would still
+             like to "break" the loop. We can do this
+              using the "break" keyword.
+        Whenever we encounter the word "break" within a 
+        loop (for or while) we will immediately exit 
+        that loop.</p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87; font-weight: bold;">while</span> <span style="color: #3465a4;">True</span><span style="color: #000000; font-weight: bold;">:</span>
+        <span style="color: #000000;">inp</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Type a number: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">inp</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"5"</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">break</span>  <span style="color: #8f5902; font-style: italic;"># when 5 is typed we will stop asking the user to type a number</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Try again..."</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># Try again will not be printed if 5 is typed</span>
+    </pre>
+    </div><br>
+
+
+
+      <h3>Example</h3>
+      <p>Here is a common example of when we 
+          would use a while loop:</p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #8f5902; font-style: italic;"># When we want to keep asking the user for input until we get a certain value</span>
+    <span style="color: #000000;">run</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #3465a4;">False</span>
+    
+    <span style="color: #204a87; font-weight: bold;">while</span> <span style="color: #000000;">run</span><span style="color: #000000; font-weight: bold;">:</span>
+        <span style="color: #000000;">answer</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is 5 + 7"</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">answer</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"12"</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Correct!"</span><span style="color: #000000; font-weight: bold;">)</span>
+            <span style="color: #000000;">run</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #3465a4;">False</span>
+        <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Try Again..."</span><span style="color: #000000; font-weight: bold;">)</span>
+    </pre></div>
+
+    <div class="mt-5 mb-5">
+        <a href="{% url 'courses' 8 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

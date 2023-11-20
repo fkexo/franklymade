@@ -1,0 +1,169 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+          <br>
+        <h3>For Loops</h3>
+         
+ <p>In programming we have something called a loop.
+      A loop will continue to run (or loop) while a
+       certain condition is satisfied. We can use a for
+        loop when we want to loop (or repeat something)
+         a known amount of times.
+
+    When we set up a for loop it looks something like 
+    this
+    :</p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">x</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">10</span><span style="color: #000000; font-weight: bold;">):</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">x</span><span style="color: #000000; font-weight: bold;">)</span>
+    </pre></div>
+    <p>We use the keyword for to declare that we are 
+        creating a loop. Then we define a variable (in this case x) 
+        which is going to be our "counter". We then type the 
+        keyword in followed by a range.
+    </p>
+    <p> <big>Range</big> is a function in python that allows us 
+        to  start at a number and connt up to a certain 
+        number while increasing by any interval we cant,
+        The basic syntax for the range function looks something like this:
+    </p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">start</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">stop</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">step</span><span style="color: #000000; font-weight: bold;">)</span>
+
+        <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">10</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># When only one number is in the function it means we start at 0 </span>
+        <span style="color: #8f5902; font-style: italic;"># increase by one each time and stop when our variable hits 10</span>
+        
+        <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">10</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># When two numbers are in the function it means to start at the first number (in this case 5) </span>
+        <span style="color: #8f5902; font-style: italic;"># increase by one each time and stop when our variable hits the second number (in this case 10)</span>
+        
+        <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># when three numbers are in the function it means to start at the first number (1)</span>
+        <span style="color: #8f5902; font-style: italic;"># stop at the second number (5)</span>
+        <span style="color: #8f5902; font-style: italic;"># and increase by the last number (2) </span>
+        </pre></div><br>
+
+
+     <h5>Examples</h5>  
+
+      <p>Some examples may help to illustrate this :</p>
+
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">x</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">):</span>
+        <span style="color: #8f5902; font-style: italic;"># we are starting at 0, increasing by 1 and stopping at 4</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">x</span><span style="color: #000000; font-weight: bold;">)</span>
+    
+    <span style="color: #8f5902; font-style: italic;"># The output for this will look like</span>
+    <span style="color: #0000cf; font-weight: bold;">0</span>
+    <span style="color: #0000cf; font-weight: bold;">1</span>
+    <span style="color: #0000cf; font-weight: bold;">2</span>
+    <span style="color: #0000cf; font-weight: bold;">3</span>
+    <span style="color: #8f5902; font-style: italic;"># Since we stop at 4 we do not print 4</span>
+    
+    
+    <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">i</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">6</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #000000; font-weight: bold;">):</span>
+        <span style="color: #8f5902; font-style: italic;"># we are starting at 0, increasing by 2 and stopping at 6</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">i</span><span style="color: #000000; font-weight: bold;">)</span>
+    
+    <span style="color: #8f5902; font-style: italic;"># The output for this will look like</span>
+    <span style="color: #0000cf; font-weight: bold;">0</span>
+    <span style="color: #0000cf; font-weight: bold;">2</span>
+    <span style="color: #0000cf; font-weight: bold;">4</span>
+    </pre></div><br>
+    
+    <div>
+        <h3>Iteration by item (For Loops)</h3>
+
+        <p>Whenever we execute a loop we have gone through an 
+            iteration. We can "iterate" (or loop) through
+             the elements within certain data types.
+              We can loop through the following data
+               types as they are a collection of elements.
+            - Strings (a collection of characters)
+            - Lists (a collection of elements)
+            - Tuples (a collection of elements)
+            
+            To iterate through a collection means to look at 
+            all of the elements within the collection. We can do
+             this using the syntax shown below.</p>
+    </div>
+        
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">myList</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">6</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #4e9a06;">"frank"</span><span style="color: #000000; font-weight: bold;">]</span>
+
+        <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">item</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #000000;">myList</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">item</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #8f5902; font-style: italic;"># This will print </span>
+        <span style="color: #0000cf; font-weight: bold;">1</span>
+        <span style="color: #0000cf; font-weight: bold;">4</span>
+        <span style="color: #0000cf; font-weight: bold;">6</span>
+        <span style="color: #000000;">frank</span>
+        </pre></div>
+      
+        <p>The variable "item" will be changed to 
+            
+            equal the next item in the list after
+             every loop (or iteration).
+
+        </p>
+
+
+
+        <div>
+            <h5>Examples</h5>
+            <p>An example of when we may iterate by item is if we are checking to see 
+                if a certain item exists in a list.</p>
+    
+                
+        </div>
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+            <pre style="margin: 0; border: 0px; line-height: 125%;">
+            <span style="color: #000000;">myList</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">6</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #4e9a06;">"hi"</span><span style="color: #000000; font-weight: bold;">]</span>
+
+            <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">item</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #000000;">myList</span><span style="color: #000000; font-weight: bold;">:</span>
+                <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">item</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #0000cf; font-weight: bold;">6</span><span style="color: #000000; font-weight: bold;">:</span>
+                    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"I found 6 in the list"</span><span style="color: #000000; font-weight: bold;">)</span>
+                <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+                    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"This is not 6"</span><span style="color: #000000; font-weight: bold;">)</span>
+            </pre></div><br>
+
+            <p>We can do same with strings or with tuples .</p>
+            <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+            <pre style="margin: 0; border: 0px; line-height: 125%;">
+            <span style="color: #8f5902; font-style: italic;"># This program counts how many "l"s appear in the string </span>
+            <span style="color: #000000;">myString</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"hello tim"</span>
+            
+            <span style="color: #000000;">count</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">0</span>
+            <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">item</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #000000;">myString</span><span style="color: #000000; font-weight: bold;">:</span>
+                <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">item</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"l"</span><span style="color: #000000; font-weight: bold;">:</span>
+                    <span style="color: #000000;">count</span> <span style="color: #ce5c00; font-weight: bold;">+=</span> <span style="color: #0000cf; font-weight: bold;">1</span>
+            
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"I found"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">count</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">'"l</span><span style="color: #4e9a06;">"s in the string')</span>
+            
+            <span style="color: #8f5902; font-style: italic;"># When looping through a string we will look at each letter</span>
+            <span style="color: #8f5902; font-style: italic;"># Looping through a tuple works the same as a looping through list</span>
+            </pre>
+            </div>
+
+
+                <div class="mt-5 mb-5">
+                    <a href="{% url 'courses' 7 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+                </div>
+        
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

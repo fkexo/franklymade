@@ -1,0 +1,61 @@
+{% extends 'franklymade/pythonbase.html' %}
+{% load static %}
+
+{% block content %}
+        
+    <div class="row row-controler">
+
+            
+                <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+                    
+    
+                    <!-- Search Widget -->
+                    {% include 'franklymade/included/searchbar.html' %}
+                    <!-- Categories Widget -->
+                    {% include 'franklymade/included/table_of_content.html' %}
+                    
+                    <!-- this is the collapse for the side bar list items -->
+                    
+        </div>
+        <div class="col-md-8 mb-5" >  
+              
+            <div>
+                <h1> Welcome to this beginner tutorial <Small> {'ProgrAMMING':PYTHON} </Small><h1>
+    
+            </div>
+
+                <div>
+                    <img src="" alt="">
+                </div>
+            
+                <div class="mb-6" >
+                    <p > In this tutorial we are going to go through the fundamentals of python programming 
+                        This will give you a basic understanding of how this programming tool can be used 
+                         and what it can accomplish for You.
+                    </p>
+
+                    <h5>Requirements</h5>
+                    <ul>
+                        
+                        <li>Time</li>
+                        <li>commitment</li>                  
+                        <li>computer</li> 
+                        <li>include how to install the python</li>
+                        <li>the required text editor use sublime</li>
+                    </ul>
+                    <big>No experience required</big>
+
+                    
+                </div>
+                <a href="{% url 'courses' 1%}"><button type="button" class="btn list-group-item-color mb-5 mt-5 " style="width: 100%;">Lets Get Started</button></a>
+             <!-- the three cards from bootstrap -->
+               
+
+                <!-- ((((((((((((((((((())))))))))))))))))) -->
+        </div>
+
+    </div>  
+    
+ {% endblock %}
+            <!-- Blog entry ends  -->

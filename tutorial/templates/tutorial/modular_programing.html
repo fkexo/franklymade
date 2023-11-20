@@ -1,0 +1,99 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+<br>
+<h3>Modular Programming</h3>
+modular programming is the practice of splitting our
+code up into different files (modules ) and then importing 
+that code so that we can use it for many different projects.
+Typically code that youy will be reusing goes into its own
+module so you can simply import that module rather than
+copying and pasting . This makes our programs more redable, 
+easier to scale and nicer to work <br>
+
+A module is typically any python file that contains only 
+functions and classes . A good example of module you may
+have used before is the math module.
+We can create and import our own modules. <br>
+
+Below is the code contained in two seperate python files
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #8f5902; font-style: italic;"># File name: myModule.py</span>
+
+    <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">func</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">x</span><span style="color: #000000; font-weight: bold;">):</span>
+        <span style="color: #204a87; font-weight: bold;">return</span> <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #0000cf; font-weight: bold;">2</span>
+    
+    <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">func2</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">y</span><span style="color: #000000; font-weight: bold;">):</span>
+        <span style="color: #204a87; font-weight: bold;">return</span> <span style="color: #000000;">y</span> <span style="color: #ce5c00; font-weight: bold;">*</span> <span style="color: #0000cf; font-weight: bold;">78</span>
+    </pre></div>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #8f5902; font-style: italic;"># File name: main.py</span>
+
+        <span style="color: #204a87; font-weight: bold;">import</span> <span style="color: #000000;">myModule</span>
+        
+        <span style="color: #000000;">value</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000;">myModule</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">func</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># this will call the func function from myModule</span>
+        
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">value</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># this prints 7</span>
+        </pre></div><br>
+
+<p>We can use the import keyword to import modules that
+    are build into python or that we've created.
+    <h6>Note:</h6>To import our own modules they must be in the 
+    same directory as the file we are importing from .
+    
+</p>
+<p>To avoid the use of "myModule" we can import specific
+    functions from our modules using a combination of 
+    keywords "import " and "from".
+</p>
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #8f5902; font-style: italic;"># File name: main.py</span>
+
+        <span style="color: #204a87; font-weight: bold;">from</span> <span style="color: #000000;">myModule</span> <span style="color: #204a87; font-weight: bold;">import</span> <span style="color: #000000;">func</span>
+
+        <span style="color: #000000;">value</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000;">func</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># now we can just use func like a regular function</span>
+
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">value</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># this prints 7</span>
+        </pre>
+</div>
+
+
+
+<div class="mt-5 mb-5">
+    <a href="{% url 'courses' 17 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

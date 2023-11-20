@@ -1,0 +1,111 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+<br>
+<h3>Conditions</h3>
+    <p>
+    Conditions are statements that result in a 
+    true or false value. In other words they return to
+        us a boolean data type. We can use conditions to 
+        compare items and make decisions based on certain 
+        comparisons. We can use comparison operators to 
+        make conditions.
+    </p>
+   
+         
+<h3>
+    Comparison Operators
+</h3>
+<p>There are six main comparison operators in python. They are the following:</p>
+
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #ce5c00; font-weight: bold;">&lt;</span>   <span style="color: #8f5902; font-style: italic;"># less than</span>
+    <span style="color: #ce5c00; font-weight: bold;">&lt;=</span>  <span style="color: #8f5902; font-style: italic;"># less than or equal to</span>
+    <span style="color: #ce5c00; font-weight: bold;">&gt;</span>   <span style="color: #8f5902; font-style: italic;"># greater than</span>
+    <span style="color: #ce5c00; font-weight: bold;">&gt;=</span>  <span style="color: #8f5902; font-style: italic;"># greater than or equal to</span>
+    <span style="color: #ce5c00; font-weight: bold;">==</span>  <span style="color: #8f5902; font-style: italic;"># equal to</span>
+    <span style="color: #ce5c00; font-weight: bold;">!=</span>  <span style="color: #8f5902; font-style: italic;"># not equal to</span>
+    </pre>
+</div>
+    <p>
+        These operators can be used to compare numbers
+        (integers and floats ) or to compare strings. However if 
+        you are comparing number and strings you can only use the 
+    == and != operator.
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">5</span>
+        <span style="color: #000000;">y</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">9</span>
+        
+        <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">&gt;</span> <span style="color: #000000;">y</span>     <span style="color: #8f5902; font-style: italic;"># this is False</span>
+        <span style="color: #000000;">y</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #000000;">x</span>    <span style="color: #8f5902; font-style: italic;"># this is False</span>
+        <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #000000;">y</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">1</span>   <span style="color: #8f5902; font-style: italic;"># this is True</span>
+        <span style="color: #000000;">x</span><span style="color: #ce5c00; font-weight: bold;">+</span><span style="color: #0000cf; font-weight: bold;">1</span> <span style="color: #ce5c00; font-weight: bold;">!=</span> <span style="color: #000000;">y</span>  <span style="color: #8f5902; font-style: italic;"># this is True</span>
+        <span style="color: #0000cf; font-weight: bold;">2.0</span> <span style="color: #ce5c00; font-weight: bold;">&gt;</span> <span style="color: #0000cf; font-weight: bold;">5</span>   <span style="color: #8f5902; font-style: italic;"># this is False</span>
+        
+        <span style="color: #4e9a06;">"hello"</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"hello"</span>  <span style="color: #8f5902; font-style: italic;"># this is True</span>
+        <span style="color: #4e9a06;">"frank"</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"frank"</span>      <span style="color: #8f5902; font-style: italic;"># this is False</span>
+        <span style="color: #4e9a06;">"a"</span> <span style="color: #ce5c00; font-weight: bold;">&gt;</span> <span style="color: #4e9a06;">"b"</span>           <span style="color: #8f5902; font-style: italic;"># this is False</span>
+        <span style="color: #4e9a06;">"apple"</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #4e9a06;">"frank"</span>     <span style="color: #8f5902; font-style: italic;"># this is True
+        
+        
+        <span style="color: #4e9a06;">"5" </span><span style="color: #ce5c00; font-weight: bold;">== <span style="color: #0000cf; font-weight: bold;">5 </span># this will return False</span></span>
+        
+        <span style="color: #8f5902; font-style: italic;"># NOT ALLOWED</span>
+        <span style="color: #0000cf; font-weight: bold;">2</span> <span style="color: #ce5c00; font-weight: bold;">&gt;</span> <span style="color: #4e9a06;">"hello"</span>
+        <span style="color: #0000cf; font-weight: bold;">3.0</span> <span style="color: #ce5c00;"><b>&lt;</b></span> <span style="color: #4e9a06;">"frank"</span>
+        <span style="color: #8f5902; font-style: italic;"># These result in errors</span>
+        </pre>
+    </div>
+    
+
+    <p>
+        We can also declare variables to hold the values of conditions
+    </p>
+
+<div style="background: #6ABBFF; overflow: auto; width: auto; border: solid #border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">check</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"frank"</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"nina"</span>
+    <span style="color: #000000;">larger</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">1</span> <span style="color: #ce5c00; font-weight: bold;">&gt;</span> <span style="color: #0000cf; font-weight: bold;">5</span>
+    <span style="color: #000000;">bothSame</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000;">larger</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #000000;">check</span>  <span style="color: #8f5902; font-style: italic;"># This will be comparing two boolean values together</span>
+    <span style="color: #8f5902; font-style: italic;"># if they are both the same we will get a True value</span>
+</pre></div>
+           
+
+        <div class="mt-5 mb-5">
+            <a href="{% url 'courses' 4 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+        </div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

@@ -1,0 +1,65 @@
+ 
+ 
+ <div>
+ 
+ <div class="dropdow list-group">
+    <a href="#" class="dropdown-toggle btn list-group-item-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View table of content<span class="caret btn "></span></a>
+    <ul class="dropdown-menu">
+    <li><a href="{% url 'courses' 1  %}" class="list-group-item list-group-item-action list-group-item-color">Variables & Data Types </a></li>
+   <li> <a href="{% url 'courses' 2  %}" class="list-group-item list-group-item-action list-group-item-color">Operators and input</a></li>
+    <li><a href="{% url 'courses' 3  %}" class="list-group-item list-group-item-action list-group-item-color">conditions</a></li>
+    <li><a href="{% url 'courses' 4  %}" class="list-group-item list-group-item-action list-group-item-color">IF/ELIF/ELSE</a></li>
+    <li><a href="{% url 'courses' 5  %}" class="list-group-item list-group-item-action list-group-item-color">Chained Conditionals and Nested statements</a>
+    <li><a href="{% url 'courses' 6  %}" class="list-group-item list-group-item-action list-group-item-color">For Loops</a></li>
+    <li><a href="{% url 'courses' 7  %}" class="list-group-item list-group-item-action list-group-item-color">While Loops</a></li>
+    <li><a href="{% url 'courses' 8  %}" class="list-group-item list-group-item-action list-group-item-color">List and Tuples</a></li>
+    <li><a href="{% url 'courses' 9  %}" class="list-group-item list-group-item-action list-group-item-color">String methods</a></li>
+    <li><a href="{% url 'courses' 7  %}" class="list-group-item list-group-item-action list-group-item-color">While Loops</a></li>
+    <li><a href="{% url 'courses' 10  %}" class="list-group-item list-group-item-action list-group-item-color">Slice Operator</a></li>
+    <li><a href="{% url 'courses' 11  %}" class="list-group-item list-group-item-action list-group-item-color">Functions</a></li>
+    <li><a href="{% url 'courses' 12  %}" class="list-group-item list-group-item-action list-group-item-color">File IO (Read Files)</a></li>
+    <li><a href="{% url 'courses' 13  %}" class="list-group-item list-group-item-action list-group-item-color">File IO (Write Files)</a></li>
+    <li><a href="{% url 'courses' 14  %}" class="list-group-item list-group-item-action list-group-item-color">List Methods</a></li>
+    
+    <li><a href="{% url 'courses' 15  %}" class="list-group-item list-group-item-action list-group-item-color">Modular Programm</a></li>
+    <li><a href="{% url 'courses' 16  %}" class="list-group-item list-group-item-action list-group-item-color">Error Handling(try and except</a></li>
+    <li><a href="{% url 'courses' 17  %}" class="list-group-item list-group-item-action list-group-item-color">what is global a</a></li>
+    <li><a href="{% url 'courses' 18  %}" class="list-group-item list-group-item-action list-group-item-color">Classes and Objects</a></li>
+       
+
+    </ul>
+</div>
+</div>
+
+
+<!-- ********************* -->
+
+<!-- <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action mycard"><h5>Learn  Python From The Beginin </h5><br> <h4>Content</h4></a>
+    
+    
+    
+    <a href="{% url 'courses' 1  %}" class="list-group-item list-group-item-action list-group-item-primary">Variables & Data Types </a>
+    <a href="{% url 'courses' 2  %}" class="list-group-item list-group-item-action list-group-item-secondary">Operators and input</a>
+    <a href="{% url 'courses' 3  %}" class="list-group-item list-group-item-action list-group-item-success">conditions</a>
+    <a href="{% url 'courses' 4  %}" class="list-group-item list-group-item-action list-group-item-danger">IF/ELIF/ELSE</a>
+    <a href="{% url 'courses' 5  %}" class="list-group-item list-group-item-action list-group-item-warning">Chained Conditionals and Nested statements</a>
+    <a href="{% url 'courses' 6  %}" class="list-group-item list-group-item-action list-group-item-info">For Loops</a>
+    <a href="{% url 'courses' 7  %}" class="list-group-item list-group-item-action list-group-item-light">While Loops</a>
+    <a href="{% url 'courses' 8  %}" class="list-group-item list-group-item-action list-group-item-dark">List and Tuples</a>
+    <a href="{% url 'courses' 9  %}" class="list-group-item list-group-item-action list-group-item-secondary">String methods</a>
+    <a href="{% url 'courses' 10  %}" class="list-group-item list-group-item-action list-group-item-danger">Slice Operator</a>
+    <a href="{% url 'courses' 11  %}" class="list-group-item list-group-item-action list-group-item-warning">Functions</a>
+    <a href="{% url 'courses' 12  %}" class="list-group-item list-group-item-action list-group-item-info">File IO (Read Files)</a>
+    <a href="{% url 'courses' 13  %}" class="list-group-item list-group-item-action list-group-item-light">File IO (Write Files)</a>
+    <a href="{% url 'courses' 14  %}" class="list-group-item list-group-item-action list-group-item-dark">List Methods</a>
+    
+    <a href="{% url 'courses' 15  %}" class="list-group-item list-group-item-action list-group-item-warning">Modular Programm</a>
+    <a href="{% url 'courses' 16  %}" class="list-group-item list-group-item-action list-group-item-info">Error Handling(try and except</a>
+    <a href="{% url 'courses' 17  %}" class="list-group-item list-group-item-action list-group-item-light">what is global a</a>
+    <a href="{% url 'courses' 18  %}" class="list-group-item list-group-item-action list-group-item-dark">Classes and Objects</a>
+    
+</div>
+<br><hr><br>
+     -->
+    

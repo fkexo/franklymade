@@ -1,0 +1,120 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+<br>
+<h3>Global And Local Variables</h3>
+    <p>
+        Now that we've learned about functions it's time
+        to understand an important topic , the difference
+        between global and local variables . When we create 
+        a variable within a function it is said to be local
+        to that function. 
+        This means that we cannot access variables that we've 
+        created within that function outside of it.
+
+
+    </p>
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">myFunc</span><span style="color: #000000; font-weight: bold;">():</span>
+        <span style="color: #000000;">y</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">7</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">y</span><span style="color: #000000; font-weight: bold;">)</span>
+
+    <span style="color: #000000;">myFunc</span><span style="color: #000000; font-weight: bold;">()</span>
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">y</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; This will cause an error!</span>
+    <span style="color: #8f5902; font-style: italic;"># We cannot access the variable y as it is defined within a function</span>
+
+    </pre>
+   </div><br>
+
+    <p>When we create variables in the main-line (not within a function) 
+        they are said to be global. This means that all of 
+        our functions can access these variables so long 
+        as they are defined after the variable is created.<p>
+
+
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">7</span>
+
+    <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">myFunc</span><span style="color: #000000; font-weight: bold;">():</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">x</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># This will print 7</span>
+    </pre></div><br>
+
+    <h3>Global Keyword</h3>
+    <p>Many times we would like to change a global
+        variable from within a function. However, have
+        a look at what happens when we try this below.
+    </p>
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">7</span>
+
+        <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">myFunc</span><span style="color: #000000; font-weight: bold;">():</span>
+            <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">5</span>
+            
+        <span style="color: #000000;">myFunc</span><span style="color: #000000; font-weight: bold;">()</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">x</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #8f5902; font-style: italic;"># OUTPUT:</span>
+        <span style="color: #0000cf; font-weight: bold;">7</span>
+        </pre></div><br>
+
+        <p>When we try to change the value of x from within
+            the function what we actually end up doing is creating 
+            a new variable local to myFunc. To avoid this problem we can 
+            use the "global" Keyword.
+
+        </p>
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+            <pre style="margin: 0; border: 0px; line-height: 125%;">
+            <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">7</span>
+
+            <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">myFunc</span><span style="color: #000000; font-weight: bold;">():</span>
+                <span style="color: #204a87; font-weight: bold;">global</span> <span style="color: #000000;">x</span>
+                <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">5</span>
+                
+            <span style="color: #000000;">myFunc</span><span style="color: #000000; font-weight: bold;">()</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">x</span><span style="color: #000000; font-weight: bold;">)</span>
+            
+            <span style="color: #8f5902; font-style: italic;"># OUTPUT</span>
+            <span style="color: #0000cf; font-weight: bold;">5</span>
+            </pre></div><br>
+
+            <h5>Some Caution</h5>
+            <p>It is typically not good practice to use global variables. This is because we usually design functions that are meant to be reused in future programs. So avoid using global variables if possible.
+                One case where a global variable is acceptable is when creating project/program specific functions that will not be re-used. </p>
+
+                <div class="mt-5 mb-5">
+                    <a href="{% url 'courses' 19 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+                </div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

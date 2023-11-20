@@ -1,0 +1,140 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+<br>
+<h1>Slice Operator</h1>
+<p>The slice operator is unique to python and makes our lives as programmers MUCH easier.
+        It is somewhat a combination between the range 
+        function and indexing. You can think of a slice 
+        as a section (or part) or a collection. 
+        We can takes "slices" of lists, strings and 
+        tuples. The basic syntax for a slice is square 
+        brackets with colons and integers inside "[0:1:2]".</p>
+
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #000000;">start</span><span style="color: #000000; font-weight: bold;">:</span><span style="color: #000000;">stop</span><span style="color: #000000; font-weight: bold;">:</span><span style="color: #000000;">step</span><span style="color: #000000; font-weight: bold;">]</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[:</span><span style="color: #000000;">stop</span><span style="color: #000000; font-weight: bold;">]</span>  <span style="color: #8f5902; font-style: italic;"># By using one colon and leaving the first argument blank we automatically start at index 0, stepping by 1</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #000000;">start</span><span style="color: #000000; font-weight: bold;">:]</span>  <span style="color: #8f5902; font-style: italic;"># By using one colon and leaving the last argument blank we automatically go to the end, stepping by 1</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[::</span><span style="color: #000000;">step</span><span style="color: #000000; font-weight: bold;">]</span>  <span style="color: #8f5902; font-style: italic;"># by using two colons and leaving the first two arguments blank we start at index 0, go to the end and step by 1</span>
+        </pre>
+        </div>
+
+
+<p>The slice operator has optional arguments for if
+you decide to leave things blank. It will 
+automatically start at index 0, stop at the end 
+and step by 1 unless you declare otherwise.
+Here are some examples of the slice operator 
+in use.
+</p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">myStr</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"hello"</span>
+
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">:]</span>   <span style="color: #8f5902; font-style: italic;"># -&gt; "ello"</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[:</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">]</span>   <span style="color: #8f5902; font-style: italic;"># -&gt; "hel" (we don't include the stopping point)</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[::</span><span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #000000; font-weight: bold;">]</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; "hlo"</span>
+        <span style="color: #4e9a06;">"new string to slice"</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">:</span><span style="color: #0000cf; font-weight: bold;">12</span><span style="color: #000000; font-weight: bold;">:</span><span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #000000; font-weight: bold;">]</span> <span style="color: #8f5902; font-style: italic;"># -&gt; "srn "</span>
+        </pre>
+        </div><br>
+
+
+<h3>Insertion Using Slice</h3>
+<p>The slice operator is also useful for inserting 
+    elements into a list at a certain index.
+        This specific functionality is only available for lists.
+        
+        To do this we simply use the slice operator with
+        
+        one colon and place the same integer on either s
+        ide. At this index we will insert a specific item.
+    </p>
+
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">myList</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">97</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">98</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">99</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">100</span><span style="color: #000000; font-weight: bold;">]</span>
+
+        <span style="color: #000000;">myList</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">:</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">40</span>
+        
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">myList</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># prints [97, -40, 98, 99, 100]</span>
+        </pre></div>
+
+<br>
+<h3>Nevgative Indexing</h3>
+
+<p>Unlike most other languages python supports 
+    negative indexing. What this means is that we can 
+    use negative integers to access values within a
+        collection (str, list, tuple etc.). 
+        Negative indexing works similarly to positive 
+        indexing where -1 represents the last element
+        in the list and -len(list) represents the first
+        element. We can use negative indexing for 
+        slicing as well.
+    </p>
+
+
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">fruits</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"apple"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"pear"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"banana"</span><span style="color: #000000; font-weight: bold;">]</span>
+
+        <span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; "banana"</span>
+        <span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">]</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; "apple"</span>
+        
+        <span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #000000; font-weight: bold;">:]</span>   <span style="color: #8f5902; font-style: italic;"># -&gt; ["pear", "banana"]</span>
+        <span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[::</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; ["banana","pear","apple"]</span>
+        <span style="color: #8f5902; font-style: italic;"># Doing [::-1] reverses the list</span>
+        
+        <span style="color: #8f5902; font-style: italic;"># These same properties apply to strings and tuples</span>
+        
+        <span style="color: #000000;">myStr</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"hello"</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]</span>    <span style="color: #8f5902; font-style: italic;"># -&gt; "o"</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[::</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; "olleh"</span>
+        <span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">[:</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">]</span>   <span style="color: #8f5902; font-style: italic;"># -&gt; "he"</span>
+        </pre></div>
+
+
+
+
+
+
+        <div class="mt-5 mb-5">
+            <a href="{% url 'courses' 12 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

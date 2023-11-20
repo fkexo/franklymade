@@ -1,0 +1,153 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+        <br>
+        <h3>List</h3>
+        <p>A list is another data type in python (just like ints, strs etc.).
+            A list is a collection of elements 
+            (also known as items). A list can hold an infinite
+             amount of elements of different data types. 
+             We can add, remove and find certain elements
+              in a list using something called indexes 
+              (or indices). In python a list is represented by
+               square brackets ([]).
+            </p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">myList</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"tim"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #0000cf; font-weight: bold;">43</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #0000cf; font-weight: bold;">7.0</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #3465a4;">True</span><span style="color: #000000; font-weight: bold;">]</span>
+        <span style="color: #000000;">fruits</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"apple"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"pear"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"orange"</span><span style="color: #000000; font-weight: bold;">]</span>
+        <span style="color: #000000;">numbers</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #0000cf; font-weight: bold;">6</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #0000cf; font-weight: bold;">77</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">8</span><span style="color: #000000; font-weight: bold;">]</span>
+        <span style="color: #8f5902; font-style: italic;"># Each item in our list is separated by a comma</span>
+        </pre></div><br>
+    
+
+    <h3>Indexing Elements</h3>
+    <p>To access individual elements in our list we can do something
+            called indexing. Each element in our list is 
+            automatically given an integer value that 
+            represents its location in the list. We start 
+            assigning indexes at the number 0. Meaning in
+            our fruit list (see above) the element "apple"
+            would be index 0 and the element "pear" would 
+            be index 1. We can use these integers to access
+            certain values in the list by typing our list
+                name, followed by square brackets ([])
+                enclosing our index:
+    </p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">fruits</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"apple"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"pear"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"orange"</span><span style="color: #000000; font-weight: bold;">]</span>
+
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">])</span>  <span style="color: #8f5902; font-style: italic;"># prints "apple"</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">])</span>  <span style="color: #8f5902; font-style: italic;"># prints "pear"</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #000000; font-weight: bold;">])</span>  <span style="color: #8f5902; font-style: italic;"># prints "orange"</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># prints ["apple", "pear", "orange"]</span>
+        </pre></div><br>
+
+    
+<h3>Adding And Removing Elenents</h3>
+<p>
+    Lists are a mutable data type, meaning that we can change 
+    the elements within them. To change an already 
+    existing element we can assign that elements index
+        to equal a new value:
+</p>
+    
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">fruits</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;"></span><span style="color: #4e9a06;">"apple"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"pear"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"orange"</span><span style="color: #000000; font-weight: bold;">]</span>
+
+    <span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"banana"</span>
+    
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># prints ["apple", "banana", "orange"]</span>
+    </pre>
+</div>
+
+<p>
+    To add a new item to a list we can use
+        the method .append(). Whatever is in the 
+        brackets will be added to the end of the list:
+</p>
+
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">fruits</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"apple"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"pear"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"orange"</span><span style="color: #000000; font-weight: bold;">]</span>
+
+    <span style="color: #000000;">fruits</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">append</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"banana"</span><span style="color: #000000; font-weight: bold;">)</span>
+    
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># prints ["apple", "pear", "orange", "banana"]</span>
+    </pre>
+</div>
+
+<p>To remove an item from the list we can use the 
+    method .remove(). Whatever item is inside of 
+    the brackets will be removed from the list. 
+    We can also remove items by index using the 
+    "del" keyword:
+</p> 
+
+
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #8f5902; font-style: italic;"># Using .remove()</span>
+    <span style="color: #000000;">fruits</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"apple"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"pear"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"orange"</span><span style="color: #000000; font-weight: bold;">]</span>
+    
+    <span style="color: #000000;">fruits</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">remove</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"appple"</span><span style="color: #000000; font-weight: bold;">)</span>
+    
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># prints ["pear", "orange"]</span>
+    
+    
+    <span style="color: #8f5902; font-style: italic;"># Using del</span>
+    <span style="color: #000000;">fruits</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"apple"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"pear"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"orange"</span><span style="color: #000000; font-weight: bold;">]</span>
+    
+    <span style="color: #204a87; font-weight: bold;">del</span> <span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">]</span>
+    
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">fruits</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># prints ["pear", "orange"]</span>
+    </pre></div><br>
+
+    <div>
+        <h3>Tuples</h3>
+        <p>Tuples are another data type in python. They are similar to lists except they are immutable. This means we cannot change 
+            the value of a tuple by adding, removing or 
+            changing already existing items. To create a 
+            tuple we use regular brackets "()". We separate
+            our items by commas and like lists we can index
+            items by using square brackets "[]".
+        </p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+            <pre style="margin: 0; border: 0px; line-height: 125%;">
+            <span style="color: #000000;">nums</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">6</span><span style="color: #000000; font-weight: bold;">)</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">nums</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">])</span>  <span style="color: #8f5902; font-style: italic;"># prints 1</span>
+            
+            <span style="color: #8f5902; font-style: italic;"># NOT ALLOWED</span>
+            <span style="color: #000000;">nums</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #0000cf; font-weight: bold;">4</span>   
+            <span style="color: #000000;">nums</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">append</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #000000; font-weight: bold;">)</span>
+            <span style="color: #000000;">nums</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">remove</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">)</span>
+            <span style="color: #204a87; font-weight: bold;">del</span> <span style="color: #000000;">nums</span><span style="color: #000000; font-weight: bold;">[</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">]</span>
+            <span style="color: #8f5902; font-style: italic;"># These will cause errors  </span>
+            </pre></div>
+
+            <p>
+                For now we will not worry about tuples and 
+                their uses. We will simply acknowledge that 
+                they do exist and understand some of their basic 
+                properties.
+            </p>
+    </div>
+
+
+
+
+    <div class="mt-5 mb-5">
+    <a href="{% url 'courses' 9 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+    </div>
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

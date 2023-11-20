@@ -1,0 +1,234 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+{% block content %}
+    
+        <br>        
+        <h3>Getting input</h3>
+                <p>Printing and displaying things to the user is great.'
+                However, we want the user to be able to talk back to 
+                us and give us information. This is known as input!To 
+                get input from the user we can use the keyword "input". 
+                This will allow for the user to input some text and hit
+                the enter key when they are done. Since we typically want 
+                to store what the user inputted we declare a variable to
+                hold that input (see below).</p>
+
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; line-height: 125%; border: 0px;">
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is your name?"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">()</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># This will print out whatever the user typed </span>
+
+        </pre>
+        </div>
+
+        <p>
+                Inside the brackets after the input 
+                keyword we can actually put what is known as a prompt.
+                        This will be printed on the same line that the user is
+                        typing on. It's typically a good idea to end your prompt
+                        with a colon or a space so the users input doesn't appear 
+                        to be squeezed together with the programs output.      
+        </p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">)</span> 
+
+        <span style="color: #8f5902; font-style: italic;"># The program would do something like this</span>
+        <span style="color: #000000;">What</span> <span style="color: #204a87; font-weight: bold;">is</span> <span style="color: #000000;">your</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">:</span> <span style="color: #000000;"> </span><span style="color: #8f5902; font-style: italic;"># this is where you type in your name</span>
+        <span style="color: #8f5902; font-style: italic;"># lets say your name is frank </span>
+
+
+        <span style="color: #000000;">What</span> <span style="color: #204a87; font-weight: bold;">is</span> <span style="color: #000000;">your</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">:</span> <span style="color: #000000;"> my name is frank</span>
+        <span style="color: #000000;">my name is frank</span><span style="color: #8f5902; font-style: italic;">  # will be displayed </span>
+
+        </pre>
+        </div>
+        <br>
+
+
+        <h3>More About Print</h3>
+        <p>
+        The print function is capable of printing multiple 
+        things on the same line. If we separate things that 
+        we want to print by a comma all of them will appear
+                on the same line. The print function even includes 
+                a space before and after each item so they don't 
+                appear squeezed together.     
+        </p>
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"welcome"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">)</span> 
+
+        <span style="color: #8f5902; font-style: italic;"># The program would do something like this</span>
+        <span style="color: #000000;">What</span> <span style="color: #204a87; font-weight: bold;">is</span> <span style="color: #000000;">your</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">:</span> <span style="color: #000000;">frank</span>
+        <span style="color: #000000;">welcome</span> <span style="color: #000000;">frank</span>
+        </pre></div><br>
+
+        <div>
+                
+                <h3>Operators</h3>
+                <p>In python there are operators that we can use 
+                on certain data types. Typically when we
+                use operators we must make sure that the
+                items we are doing the operations on are 
+                of them same data type. For example, trying
+                to add a str to an int will result in a error.
+
+                The main operators in python are:</p>
+                <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+                <pre style="margin: 0; border: 0px; line-height: 125%;">
+                <span style="color: #ce5c00; font-weight: bold;">+</span>  <span style="color: #8f5902; font-style: italic;"># addition </span>
+                <span style="color: #ce5c00; font-weight: bold;">-</span>  <span style="color: #8f5902; font-style: italic;"># subtraction</span>
+                <span style="color: #ce5c00; font-weight: bold;">/</span>  <span style="color: #8f5902; font-style: italic;"># division</span>
+                <span style="color: #ce5c00; font-weight: bold;">*</span>  <span style="color: #8f5902; font-style: italic;"># multiplication </span>
+                <span style="color: #ce5c00; font-weight: bold;">**</span> <span style="color: #8f5902; font-style: italic;"># exponential</span>
+                <span style="color: #ce5c00; font-weight: bold;">//</span> <span style="color: #8f5902; font-style: italic;"># integer division (removes decimal portion)
+                %  # modulus (gives remainder of division) </span>
+                </pre>
+                </div>
+
+        <p>     We can use all of these operators on int's and 
+                floats's but not on the other data types. 
+                The only exception is that we are able to use 
+                the + and * operator on str's in a special way.</p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">5</span>
+        <span style="color: #000000;">y</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">6</span>
+
+        d <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">12 <span style="color: #ce5c00; font-weight: bold;">%</span> 5     <span style="color: #ce5c00; font-weight: bold;"><span style="color: #8f5902; font-style: italic;"># d is 2</span></span></span>
+        <span style="color: #000000;">z</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #000000;">y</span>      <span style="color: #8f5902; font-style: italic;"># z is 11</span>
+        <span style="color: #000000;">w</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">-</span> <span style="color: #000000;">y</span>      <span style="color: #8f5902; font-style: italic;"># w is -1</span>
+        <span style="color: #000000;">q</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">5</span> <span style="color: #ce5c00; font-weight: bold;">*</span> <span style="color: #0000cf; font-weight: bold;">6</span>      <span style="color: #8f5902; font-style: italic;"># q is 30</span>
+        <span style="color: #000000;">u</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">10</span> <span style="color: #ce5c00; font-weight: bold;">/</span> <span style="color: #000000;">x</span>     <span style="color: #8f5902; font-style: italic;"># u is 2.0</span>
+        <span style="color: #000000;">p</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">10</span> <span style="color: #ce5c00; font-weight: bold;">*</span> <span style="color: #0000cf; font-weight: bold;">2.0</span>   <span style="color: #8f5902; font-style: italic;"># p is 20.0</span>
+        <span style="color: #000000;">t</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">**</span> <span style="color: #0000cf; font-weight: bold;">3</span>     <span style="color: #8f5902; font-style: italic;"># t is 125</span>
+        <span style="color: #000000;">c</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">28</span> <span style="color: #ce5c00; font-weight: bold;">//</span> <span style="color: #000000;">y</span>    <span style="color: #8f5902; font-style: italic;"># c is 5</span>
+        </pre></div><br>
+
+
+
+
+        <h3>Order Of Operations</h3>
+        <p>Python follows the standard order of operations (BEDMAS).<br> 1. Brackets<br> 2. Exponents<br> 3. Multiplication<br> 4. Division<br> 5. Addition<br> 6. Subtraction<br></p>
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; line-height: 125%; border: 0px;">
+        <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #ce5c00; font-weight: bold;">+</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">/</span> <span style="color: #0000cf; font-weight: bold;">2</span>  <span style="color: #8f5902; font-style: italic;"># x is 2.0</span>
+        <span style="color: #000000;">y</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #0000cf; font-weight: bold;">4</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #0000cf; font-weight: bold;">5</span> <span style="color: #ce5c00; font-weight: bold;">*</span> <span style="color: #0000cf; font-weight: bold;">7</span>  <span style="color: #8f5902; font-style: italic;"># y is 39</span>
+
+        </pre>
+        </div><br>
+
+
+
+        <div>
+                <h3>Operations on Strings</h3>
+                <p>Python allows for the use of the addition (+) operator and multiplication (*) operator on strings.
+                Adding two strings is known as concatenation.
+                
+                Adding one string to another will simply add it to the end.
+                Multiplying a string by an integer n will repeat that string n times.</p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; line-height: 125%; border: 0px;">
+        <span style="color: #000000;">newStr</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"hello"</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">"frank"</span>  <span style="color: #8f5902; font-style: italic;"># newStr is "frank"</span>
+        <span style="color: #000000;">newStr2</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"python"</span> <span style="color: #ce5c00; font-weight: bold;">*</span> <span style="color: #0000cf; font-weight: bold;">3</span>    <span style="color: #8f5902; font-style: italic;"># newStr2 is "pythonpythonpython"</span>
+        </pre>
+        </div>
+        </div>
+        <br>
+
+
+    <div>
+            <h3>Bring it All together</h3>
+            <p>To apply everything we've junst 
+               learned we want to create a 
+               program that asks the  user for two numbers
+               and outputs their
+               sum . To do this we try the following.
+            </p>
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; line-height: 125%; border: 0px;">
+        <span style="color: #000000;">newStr</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"hello"</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">"frank"</span>  <span style="color: #8f5902; font-style: italic;"># newStr is "hellofrank"</span>
+        <span style="color: #000000;">newStr2</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"python"</span> <span style="color: #ce5c00; font-weight: bold;">*</span> <span style="color: #0000cf; font-weight: bold;">3</span>    <span style="color: #8f5902; font-style: italic;"># newStr2 is "pythonpythonpython"</span>
+        </pre>
+        </div>
+
+          <p>
+                But when we run the program we get output that looks like this:
+
+                python output
+                
+                When we added the two numbers together we were actually adding two strings! This is because whenever we get input from the user it comes in as a string. So when the user typed 3 and 4 our program saw it as "3" and "4", instead of adding them mathematically it concatenated them.
+                
+                To fix this we must convert each of our inputs into an integer first. We can convert a string into an integer by using the function "int()".
+          </p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">num1</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"43"</span>
+        <span style="color: #000000;">num2</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">num1</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># Now num2 is the int 43 </span>
+        </pre>
+        </div>
+                <p>So our program will look like this:</p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="border: 0px; margin: 0; line-height: 125%;">
+        <span style="color: #000000;">num1</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Pick a Number: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">num2</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Pick Another Number: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #000000;">SUM</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">num1</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">num2</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">SUM</span><span style="color: #000000; font-weight: bold;">)</span>
+        </pre>
+        </div>
+
+                        <h5>We should get an output of 7</h5>
+
+
+
+                        <div class="mt-5 mb-5">
+                                <a href="{% url 'courses' 3 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+                            </div>
+                     
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

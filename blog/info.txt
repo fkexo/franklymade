@@ -1,0 +1,2 @@
+the css styling of this blog is controled from the main project directory 
+that 'sitetemplate'

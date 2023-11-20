@@ -1,0 +1,142 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+ 
+    
+<br>
+<h3>Chained Conditionals</h3>
+    <p>
+    Chained conditionals are simply a "chain" or a combination or 
+    multiple conditions. We can combine conditions using the following three key words:
+    </p>
+
+    <p>-and</p>
+    <p>-or</p>
+    <p>-not</p>
+
+    <p>The and keyword allows us to check if two conditions are true.
+        If they are both true then the entire condition is true.
+            If one or both of them are false then the entire 
+            condition is false.
+    </p>
+
+        <p>The or keyword allows us to check if one of two conditions is true. 
+            If one or both of the conditions are true then then entire
+            condition will be true. If both of the conditions are false 
+            then the entire condition is false.
+    </p>
+
+    <p>
+        The not keyword allows us to check if an entire condition is false.
+            If the condition is false it will result in a true value. 
+            If the condition is true it will give us a false value
+            (you can think of it as reversing the condition).
+    </p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #3465a4;">False</span>  <span style="color: #8f5902; font-style: italic;"># This gives False</span>
+        <span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #3465a4;">True</span>   <span style="color: #8f5902; font-style: italic;"># This gives True</span>
+        <span style="color: #3465a4;">False</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #3465a4;">False</span> <span style="color: #8f5902; font-style: italic;"># This gives False</span>
+        
+        <span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">or</span> <span style="color: #3465a4;">False</span>   <span style="color: #8f5902; font-style: italic;"># This gives True</span>
+        <span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">or</span> <span style="color: #3465a4;">True</span>    <span style="color: #8f5902; font-style: italic;"># This gives True</span>
+        <span style="color: #3465a4;">False</span> <span style="color: #204a87; font-weight: bold;">or</span> <span style="color: #3465a4;">False</span>  <span style="color: #8f5902; font-style: italic;"># This gives False</span>
+        
+        <span style="color: #204a87; font-weight: bold;">not</span> <span style="color: #3465a4;">True</span>        <span style="color: #8f5902; font-style: italic;"># This gives False</span>
+        <span style="color: #204a87; font-weight: bold;">not</span> <span style="color: #3465a4;">False</span>       <span style="color: #8f5902; font-style: italic;"># This gives True</span>
+        </pre></div>
+
+            <p>We can also combine the use of these keywords 
+                to create longer conditions:</p>
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000; font-weight: bold;">(</span><span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">or</span> <span style="color: #3465a4;">False</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #3465a4;">False</span>  <span style="color: #8f5902; font-style: italic;"># This is False</span>
+    <span style="color: #3465a4;">False</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #3465a4;">True</span>    <span style="color: #8f5902; font-style: italic;"># This is False</span>
+    <span style="color: #000000; font-weight: bold;">(</span><span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">or</span> <span style="color: #3465a4;">False</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #3465a4;">True</span>   <span style="color: #8f5902; font-style: italic;"># This is True</span>
+    <span style="color: #3465a4;">True</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #204a87; font-weight: bold;">not</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #3465a4;">False</span><span style="color: #000000; font-weight: bold;">)</span>        <span style="color: #8f5902; font-style: italic;"># This is True</span>
+    
+    <span style="color: #204a87; font-weight: bold;">not</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">1</span> <span style="color: #ce5c00; font-weight: bold;">&gt;</span> <span style="color: #0000cf; font-weight: bold;">2</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #0000cf; font-weight: bold;">2</span><span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">7</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #ce5c00; font-weight: bold;">-</span><span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">)</span>   <span style="color: #8f5902; font-style: italic;"># This is True</span>
+    </pre>
+</div>
+
+        <p>Of course we can combine this with our knowledge of if statements 
+            to check multiple conditions in one if:
+        </p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;"><span style="color: #000000;">food</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is your favorite food? "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">drink</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is your favorite drink? "</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">food</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"pizza"</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #000000;">drink</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"juice"</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Those are my favorite as well!"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"One of those is not my favorite"</span><span style="color: #000000; font-weight: bold;">)</span>
+        </pre>
+        </div> 
+
+
+    <div>
+        <h3>Nested Statements</h3>
+
+        <p>
+            Now that we've learned about some basic
+            logic and control structures in python we 
+            can move on to nesting. Nesting is simply pytting
+            code inside of other code. For example 
+            placing an if statement inside of an already 
+            existing if statement.
+        </p>
+    </div>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">answer</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is your age? "</span><span style="color: #000000; font-weight: bold;">)</span>
+
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">answer</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">&gt;=</span> <span style="color: #0000cf; font-weight: bold;">18</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #000000;">answer</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What country do you live in? "</span><span style="color: #000000; font-weight: bold;">)</span>
+            <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">answer</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"canada"</span><span style="color: #000000; font-weight: bold;">:</span>
+                <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Me as well!"</span><span style="color: #000000; font-weight: bold;">)</span>
+            <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+                <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Oh, I do not live there."</span><span style="color: #000000; font-weight: bold;">)</span>
+        </pre></div>
+
+    <p>There is no limit to the amount of times that we
+         can nest. We just have to be sure that we are 
+         aware of our indentation.
+
+    </p>
+    
+
+
+    <div class="mt-5 mb-5">
+        <a href="{% url 'courses' 6 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

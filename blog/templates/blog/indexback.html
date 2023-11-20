@@ -1,0 +1,83 @@
+{% extends 'blogbase.html' %}
+
+
+
+{% block content %}
+<!-- the blogs -->
+<div class="container">
+  
+    <h1 class="mt-4 mb-8 text-center">Life Discovery
+      <small></small>
+      </h1>
+      <h5> </h5>
+      <h5></h5>
+    
+      <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+          <a href="#">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Food For Thought</li>
+      </ol>
+    
+    
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+        <!-- <h1 class="my-4">FranklyMade.
+          <small style="padding:0px; margin:-12px;">tech</small>
+        </h1> -->
+
+        <!-- Blog Post -->
+
+    {% for article_item in article_list %}
+      
+        <div class="card mb-6 mt-4">
+          <img class="card-img-top" src="{{ article_item.postimage.url }}" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">{{ article_item.title }}</h2>
+            <p class="card-text">{{ article_item.shotend_body }}</p>
+            <a href="{% url 'myarticle' article_item.id %}" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted <!-- on {{ article_item.postdate }}--> by 
+            <a href="#">FranklyMade</a>
+          </div>
+        </div>
+        
+    {% endfor %}
+    
+       
+        {% endblock %}
+
+        <!-- Blog Post -->
+        <!-- <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2017 by
+            <a href="#">Start Bootstrap</a>
+          </div>
+        </div> -->
+
+        <!-- Blog Post -->
+        <!-- <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2017 by
+            <a href="#">Start Bootstrap</a>
+          </div>
+        </div> -->
+
+

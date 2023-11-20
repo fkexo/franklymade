@@ -1,0 +1,80 @@
+<!-- {% extends 'sitetemplate/pythonbase.html' %} -->
+
+
+{% block content %}
+    
+<br>
+<h3>Writing To A Files</h3>
+<p>
+    Reading from a file is great but sometimes we also want to write information 
+    that we can access later. Writing to a file is extremely similar to reading. 
+    The only difference is the mode in which we open the file. 
+    There are two writing modes that we can use, append and write.
+
+    Appending to a file will add to the end of it. If we are opening in a file in "a" 
+    mode we must ensure it is in the same directory as our python script.
+</p>
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">f</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">open</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"file.txt"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"a"</span><span style="color: #000000; font-weight: bold;">)</span>
+</pre></div>
+<p>
+    Opening a file in "w" or write mode will 
+    clear the entire file if it exists. If it does
+        not exist it will create a new one for us.
+</p>
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">f</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">open</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"file.txt"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"w"</span><span style="color: #000000; font-weight: bold;">)</span>
+</pre></div><br>
+    
+<p>Once we've opened our file we can write things to it. 
+    If we would like to write to a newline each time
+        we must make sure we include a "\n" at the end of
+        our write statement.</p>
+
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">f</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">open</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"file.txt"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"w"</span><span style="color: #000000; font-weight: bold;">)</span>
+
+    <span style="color: #000000;">lines</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"line 1"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"line 2"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"line 3"</span><span style="color: #000000; font-weight: bold;">]</span>
+    <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">line</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #000000;">lines</span><span style="color: #000000; font-weight: bold;">:</span>
+        <span style="color: #204a87;">f</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">write</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">line</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">"\n"</span><span style="color: #000000; font-weight: bold;">)</span>
+
+        <span style="color: #204a87;">f</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">close</span><span style="color: #000000; font-weight: bold;">()</span>  <span style="color: #8f5902; font-style: italic;"># Once we are done writing we must close the file to save the changes.</span>
+</pre></div><br>
+
+
+            Our text file now looks like this
+            <img class="alignnone size-full wp-image-960" src="http://techwithtim.net/wp-content/uploads/2018/12/text-file-example-python.png" alt="python how to open file" width="206" height="126"> 
+
+            <div class="mt-5 mb-5">
+            <a href="{% url 'courses' 15 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

@@ -1,0 +1,82 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+<br>
+<h3>List Methods</h3>
+<p>Similarly to strings pythons list data type
+    has many useful methods that we can implement. 
+    The two that i am going to show you here are .count()
+    and .find(). These methods also work on strings!
+</p>
+
+<p>.count(): this will count how many times a certain element appears.
+
+</p>
+
+<p>- .find(): this will fing the first occurrence of an item and 
+    return its index.
+</p>
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #000000;">myList</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #000000; font-weight: bold;">[</span><span style="color: #4e9a06;">"a"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"b"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"b"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"a"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"c"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"d"</span><span style="color: #000000; font-weight: bold;">]</span>
+
+    <span style="color: #000000;">myList</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">count</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"a"</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; 2</span>
+    <span style="color: #000000;">myList</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">find</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"a"</span><span style="color: #000000; font-weight: bold;">)</span>   <span style="color: #8f5902; font-style: italic;"># -&gt; 0</span>
+    <span style="color: #000000;">myList</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">count</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"b"</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; 2</span>
+    <span style="color: #000000;">myList</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">find</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"hello"</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; -1</span>
+    <span style="color: #8f5902; font-style: italic;"># If the element is not found .find() will return -1</span>
+    </pre></div>
+
+<h5>Example</h5>
+<p><h6>Problem</h6>: we would like to check the validity of an email
+address. For our purposes it is valid if it contains one "@",
+    has length > = 5 and ends with a ".com"</p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">email</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Email Address: "</span><span style="color: #000000; font-weight: bold;">)</span>
+
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">email</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">count</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"@"</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #0000cf; font-weight: bold;">1</span> <span style="color: #204a87; font-weight: bold;">and</span> <span style="color: #204a87;">len</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">email</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">&gt;=</span> <span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">email</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">find</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">".com"</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #204a87;">len</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">email</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">-</span> <span style="color: #0000cf; font-weight: bold;">4</span><span style="color: #000000; font-weight: bold;">:</span>
+                <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Valid Email"</span><span style="color: #000000; font-weight: bold;">)</span>
+            <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+                <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Invalid Email, must end with .com"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Invalid Email, must contain one @ and be longer than 5 characters"</span><span style="color: #000000; font-weight: bold;">)</span>
+    </pre></div>
+
+
+
+    <div class="mt-5 mb-5">
+        <a href="{% url 'courses' 16 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

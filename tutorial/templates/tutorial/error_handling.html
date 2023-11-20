@@ -1,0 +1,84 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+<br>
+<h3>Catching Errors</h3>
+<p>
+    I'm willing to bet all of us have seen the dreaded red error 
+    text. in python we can except certain errors and prevernt
+    our program from crashing. To do this we use a try and 
+    except statement. 
+
+    Acommon error you could run into is trying to convert a sring to an int.
+</p>
+
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"I will add 5 to any number you give me."</span><span style="color: #000000; font-weight: bold;">)</span>
+    <span style="color: #000000;">num</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"type a number:"</span><span style="color: #000000; font-weight: bold;">)</span>
+
+    <span style="color: #000000;">addedNum</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">num</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #0000cf; font-weight: bold;">5</span>
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"5 +"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">num</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">addedNum</span><span style="color: #000000; font-weight: bold;">)</span>
+    </pre>
+</div><br>
+
+Watch what happens when we type something that is not a number:
+
+<p>We cannot convert the string "hello" into an integer, hence we receive an error.</p>
+    <p>To fix this error we can use a try and except statement. 
+        The program will attempt to perform any operations
+        inside of the try statement. If for some reason 
+        an error occurs, instead of crashing the program
+        it will leave the try statement and do whatever
+        is inside of the except statement.
+
+</p>
+
+<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+    <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"I will add 5 to any number you give me."</span><span style="color: #000000; font-weight: bold;">)</span>
+    <span style="color: #000000;">num</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"type a number:"</span><span style="color: #000000; font-weight: bold;">)</span>
+    
+    <span style="color: #204a87; font-weight: bold;">try</span><span style="color: #000000; font-weight: bold;">:</span>
+        <span style="color: #000000;">addedNum</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">num</span><span style="color: #000000; font-weight: bold;">)</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #0000cf; font-weight: bold;">5</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"5 +"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">num</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">addedNum</span><span style="color: #000000; font-weight: bold;">)</span>
+    <span style="color: #204a87; font-weight: bold;">except</span><span style="color: #000000; font-weight: bold;">:</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"That is not a number!!"</span><span style="color: #000000; font-weight: bold;">)</span>
+    </pre></div> 
+
+
+
+
+            <div class="mt-5 mb-5">
+                <a href="{% url 'courses' 18 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+            </div>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

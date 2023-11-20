@@ -1,0 +1,312 @@
+this contain the html for and styling for pythonbase.html file 
+just in case of any undentifiable bug.
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>FranklyMade</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'sitetemplate/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'sitetemplate/css/modern-business.css' %}" rel="stylesheet">
+
+   <link href="{% static 'sitetemplate/css/basestyle.css' %}" rel="stylesheet"> 
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">FranklyMade</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tutorials.html">Tutorials</a>
+        </li>
+
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- the showcase image -->
+  <header>
+    <div class="showcase">
+      <img src="{% static  'sitetemplate/images/Frame 1.png' %}" alt="not found">
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Welcome To FranklyMade 
+        <small>code arena</small>
+        </h1>
+        <h5>Get started learning how to code with python </h5>
+        <h5>and web development using django a popular python frame work</h5>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Latest Tech News/li>
+        </ol>
+
+        <div class="row row-controler">
+
+            
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+                
+
+                <!-- Search Widget -->
+                <div class="card mb-4">
+                    <h5 class="card-header">Search</h5>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">Learn python</a>
+                
+                
+                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Variables & Data Types </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Operators and input</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-success">conditions</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">IF/ELIF/ELSE</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Chained Conditionals and Nested statements</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-info">For Loops</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light">While Loops</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">List and Tuples</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Iterations by Item </a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">String methods</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Slice Operator</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Functions</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-info">File IO (Read Files)</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light">File IO (Write Files)</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">List Methods</a>
+                
+                <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Modular Programm</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-info">Error Handling(try and except</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light">what is global a</a>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-dark">List Methods</a>
+                </div><br><hr><br>
+                
+
+                
+                <!-- this is the collapse for the side bar list items -->
+                
+
+                
+
+
+                <!-- Side Widget -->
+                <!-- <div class="card my-4">
+                <h5 class="card-header">Side Widget</h5>
+                <div class="card-body">
+                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                </div>
+                </div>
+        
+                -->      
+
+            </div>
+        
+
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">  
+
+                <div>
+                    <img src="" alt="">
+                </div>
+            
+                    
+            <!-- the three cards from bootstrap -->
+                <div class="card-deck">
+                <div class="card mycard ">
+                    <img src="{% static 'sitetemplate/images/python_logo.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+                <div class="card mycard">
+                    <img src="{% static 'sitetemplate/images/Group 2.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+                <div class="card mycard">
+                    <img src="{% static 'sitetemplate/images/django_logo.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+                </div>
+                    
+                <div class="mycontainer text-center">
+                    <h6>Here i will walk you through the basics of python programming from the beginer level 
+                    to the intermidiate level where you will be confortable at writing python code.
+                    After walking through this python beginer to confortable level we will be heading streigth 
+                    to web development with python and django, believe me this is the most exciting part of programming.
+                    You will be amaize at how mush and what you will learn in this tutorial.
+                    </h6>    
+                </div>
+
+                    
+
+
+                    <div class="text-center button-control" >
+                    <small >hope you are excited let's jump right in</small> <br>
+                    <a href="#"><button type="button"  class="mybtn btn btn-primary" >Begin Here</button></a>
+                </div>
+
+                <!-- ((((((((((((((((((())))))))))))))))))) -->
+                <div class="card mb-3 mycard">
+                <img src="{% static 'sitetemplate/images/python_logoshow.jpg' %}" class="card-img-top image-resize" alt="...">
+                <div class="card-body text-center">
+                    <h1 class="card-title text-center">What is python <small>{programming language}</small></h1>
+                    <p class="card-text">Python is an interpreted, object-oriented,
+                    high-level programming language with dynamic semantics. 
+                    Its high-level built in data structures, 
+                    combined with dynamic typing and dynamic binding, 
+                    make it very attractive for Rapid Application Development,
+                        as well as for use as a scripting or glue language to connect
+                        existing components together. Python's simple,
+                        easy to learn syntax emphasizes readability and 
+                        therefore reduces the cost of program maintenance. 
+                        Python supports modules and packages, which encourages
+                        program modularity and code reuse. The Python interpreter 
+                        and the extensive standard library are available in 
+                        source or binary form without charge for all major
+                            platforms, and can be freely distributed.
+                            <br>
+                        
+                            <a href="#"><button type="button" class="btn btn-primary mt-5 mb-5" >start learning</button></a>
+                        </p>
+                    <p class="card-text"><small class="text-muted"></small></p>
+                </div>
+                </div>
+                <div class="card mycard">
+                <img src="{% static 'sitetemplate/images/django_logo.jpg' %}" class="card-img-top image-resize" alt="...">
+
+                <div class="card-body text-center">
+                    <h1 class="card-title text-center">What is django</h1>
+                    <p class="card-text">Django is a free and open source web application
+                    framework written in Python.
+                        A framework is nothing more than a collection of modules that 
+                        make development easier. They are grouped together, and allow
+                        you to create applications or websites from an existing source, 
+                        instead of from scratch.
+                    This is how websites - even simple ones designed by a 
+                    single person - can still include advanced functionality 
+                    like authentication support, management and admin panels,
+                    contact forms, comment boxes, file upload support, and more.
+                        In other words, if you were creating a website from scratch
+                        you would need to develop these components yourself. 
+                        By using a framework instead, these components are already built,
+                        you just need to configure them properly to match your site.
+                        <br>
+
+                        <a href="#"><button type="button" class="btn btn-primary mt-5 mb-5" >start learning</button></a>
+
+                    </p>
+                    <p class="card-text"><small class="text-muted"></small></p>
+                    
+                </div>
+                </div>
+                        
+
+                <!-- ((((((((((((((((((())))))))))))))))))) -->
+                <!-- Blog Post -->
+                <!-- <div class="card mb-4">
+                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">Post Title</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta
+                    expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on January 1, 2017 by
+                    <a href="#">Start Bootstrap</a>
+                </div>
+                </div> -->
+
+                <!-- Pagination -->
+                <!-- <ul class="pagination justify-content-center mb-4">
+                <li class="page-item">
+                    <a class="page-link" href="#">&larr; Older</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Newer &rarr;</a>
+                </li>
+                </ul> -->
+
+            </div>
+
+
+            </div>
+            <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; FranklyMade 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'sitetemplate/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

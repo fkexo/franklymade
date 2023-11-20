@@ -1,0 +1,122 @@
+<!-- {% extends 'sitetemplate/pythonbase.html' %} -->
+
+
+{% block content %}
+    
+          <br>
+        <h3>String Methods</h3>
+
+        <p>In python we have some very useful things called methods. 
+            Now methods are pretty much anything you use on 
+            a data type in the form dataType.method(). 
+            They are built into python and save us a lot 
+            of work and a lot of time. Python has some very 
+            useful methods that we can use on the data type
+             string. The most commonly used and most useful ones
+              are:
+        </p>
+        <p>- strip()</p>
+        <p>- split()</p>
+         <p>- lower()</p>
+         <p>- uper()</p>
+         <p>- len()</p>
+
+
+     <p><big>.strip(): will remove any trailing or 
+         leading white spaces from a string.</big></p>
+
+     <p>.split(): will return a list of substrings from
+          the given string. By default it splits the 
+          string by spaces 
+        (each word becomes an element in the list). 
+        However, you can choose the string to split 
+        at by inserting it between the brackets.
+
+        </p>
+
+    <p>.lower(): will make every letter in the string lowercase.
+
+    </p>
+
+    <p>upper(): will return the amount of characters in 
+        the given sting (including spaces)
+    </p>
+
+     <p>len(): will return the amount of characters in the given string (including spaces).</p>
+     
+     <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">myStr</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #4e9a06;">"    my nAME Is Tim"</span>
+
+        <span style="color: #000000;">myStr</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">strip</span><span style="color: #000000; font-weight: bold;">()</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; "my nAME Is Tim"</span>
+        <span style="color: #000000;">myStr</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">split</span><span style="color: #000000; font-weight: bold;">()</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; ["my", "nAME", "Is", "Tim"]</span>
+        <span style="color: #000000;">myStr</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">lower</span><span style="color: #000000; font-weight: bold;">()</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; "    my name is tim"</span>
+        <span style="color: #000000;">myStr</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">upper</span><span style="color: #000000; font-weight: bold;">()</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; "    MY NAME IS TIM"</span>
+        <span style="color: #204a87;">len</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">myStr</span><span style="color: #000000; font-weight: bold;">)</span>     <span style="color: #8f5902; font-style: italic;"># -&gt; 18</span>
+        </pre></div><br>
+
+
+      <h5>Example</h5>
+      <p>A practical example of when we would use these 
+          methods can be seen below:
+      </p>
+
+      <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #8f5902; font-style: italic;"># we want the user to be able to type any variation of tim and be told that they are correct</span>
+        <span style="color: #8f5902; font-style: italic;"># if we don't convert everything into lower cases that means if the user types "Frank"</span>
+        <span style="color: #8f5902; font-style: italic;"># they'll be told that they got it wrong</span>
+        <span style="color: #8f5902; font-style: italic;"># same goes for spaces, if the user clicks space before or after they type "frank"</span>
+        <span style="color: #8f5902; font-style: italic;"># we still want to tell them they got the correct answer</span>
+        
+        <span style="color: #000000;">answer</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"What is my name? "</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">answer</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">lower</span><span style="color: #000000; font-weight: bold;">()</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">strip</span><span style="color: #000000; font-weight: bold;">()</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #4e9a06;">"frank"</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Correct!"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"That is incorrect!"</span><span style="color: #000000; font-weight: bold;">)</span>
+        </pre>
+       </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="mt-5 mb-5">
+            <a href="{% url 'courses' 11 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+        </div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

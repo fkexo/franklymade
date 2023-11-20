@@ -1,0 +1,168 @@
+{% extends 'franklymade/pythonbase.html' %}
+
+
+{% block content %}
+    
+       <br>
+        <h3>If Statement</h3>
+         <p>
+            The if statement is the most basic form of 
+            logic within python. It simply checks if
+             something is the case, and if it is, 
+             it executes what is within the proceeding
+              block of code. The basic syntax for an if 
+              statement can be seen below.
+         </p>
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+    <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #0000cf; font-weight: bold;">4</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">:</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"true"</span><span style="color: #000000; font-weight: bold;">)</span>
+        </pre>
+        </div>
+        
+
+        <h5>breaking down the syntax:</h5>
+        <p>
+            We start with the keyword "if", 
+            then a condition followed by a colon (:). 
+            The following lines that are indented are 
+            what will run if the condition evaluates 
+            to True.
+        </p>
+
+        <h3>Importance Of Indentation</h3>
+        <p>Unlike many other languages python does not use 
+            braces or brackets to enclose blocks of code, 
+            it uses indentation. That is why it is extremely 
+            important to be mindful of your codes spacing and
+             indentation. The example below illustrates this.
+        </p>
+            
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type a number: "</span><span style="color: #000000; font-weight: bold;">))</span>
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">:</span>
+           <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"the number is less than 5"</span><span style="color: #000000; font-weight: bold;">)</span>
+           <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"I always run"</span><span style="color: #000000; font-weight: bold;">)</span>
+            
+        <span style="color: #8f5902; font-style: italic;"># If the number is less than 5 both print statements will execute. </span>
+        <span style="color: #8f5902; font-style: italic;"># Otherwise just "I always run" will be printed to the screen</span>
+            </pre>
+        </div>
+        <br>
+
+        <div>
+            <h3>The Else Statement</h3>
+            <p>
+                The else statement is something that can be added after 
+                an if statement. It will only run if the if statement 
+                above it did not execute. In other words, 
+                if the condition is not met (it is False) what is 
+                inside the else statement will run.
+            </p>
+
+        <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type a number: "</span><span style="color: #000000; font-weight: bold;">))</span>
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"the number is less than 5"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"the number is NOT less than 5"</span><span style="color: #000000; font-weight: bold;">)</span>
+        </pre>
+            
+        </div>
+                Note: The indentation is still 
+                important. Notice that the else 
+                is in-line with the if statement
+                above it.
+        </div>
+        
+        
+        <div>
+            <h3>The Elif Statement</h3>
+            <p>The elif statement allows us to check multiple conditions.
+             It must come after an if statement and before a 
+             possible else (see examples). Is it valid to have 
+             multiple elif statements proceeding one another.
+              When using an elif it is not necessary to have 
+              an else afterwards, it is simply optional.
+            </p>
+
+            <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+                <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">int</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type a number: "</span><span style="color: #000000; font-weight: bold;">))</span>
+
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"the number is less than 5"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">elif</span> <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #0000cf; font-weight: bold;">10</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"the number is greater than or 5 and less than 10"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">elif</span> <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">&lt;</span> <span style="color: #0000cf; font-weight: bold;">15</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"the number is greater than or 10 and less than 15"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"the number is NOT less than 15"</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        
+        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #0000cf; font-weight: bold;">10</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"The number is 10"</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">elif</span> <span style="color: #000000;">number</span> <span style="color: #ce5c00; font-weight: bold;">==</span> <span style="color: #0000cf; font-weight: bold;">15</span><span style="color: #000000; font-weight: bold;">:</span>
+            <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"The number is 15"</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+         <span style="color: #8f5902; font-style: italic;"># Notice it is not necessary to include an else</span>
+                </pre>
+            </div>
+            <p>
+                The conditions checked in the elif will only 
+                be checked if the ones before them were False.
+                 This means that if for this example the number 
+                 was less than 5 the program will only print
+                  "the number is less than 5". It will not check
+                   the elif conditions even though they may 
+                   evaluate to True.
+
+
+            </p>
+        </div>
+         
+
+
+
+
+
+
+
+
+
+
+
+        <div class="mt-5 mb-5">
+            <a href="{% url 'courses' 5 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+        </div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->
