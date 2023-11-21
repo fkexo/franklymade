@@ -47,13 +47,6 @@ def python_cours_details(request, course_id):
        
 
     else:
-        
-        
-
-       
-    
-
-
         # if course.DoesNotExist:
         #     return redirect('python_intro')
 
