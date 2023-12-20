@@ -1,0 +1,99 @@
+
+/* 
+.my-4{
+    margin-top: ;
+} */
+
+/* #header-welk {
+    margin-top:-5em !important; 
+
+
+} */
+/* (((((((((((((((FOR THE NAV BAR STYLING ))))))))))))))))))))))*/
+.bg-dark {
+    background-color: #37045F !important;
+}
+
+/*(((((((((((((((((((((((((((for the showcase image)))))))))))))))))))))))  */
+
+.showcase img{
+    width: 100% !important;
+    margin-left: -10px;
+}
+
+
+/* (((((((((((((((main header section style)))))))))))))))))))))) */
+.breadcrumb{
+    background-color: #37045F;
+}
+
+
+
+/* (((((((((((((((((((( code display box styling)))))))))))))))))))))))))))))) */
+
+.lessonboard {
+    background: #f8f8f8 !important;
+    overflow: auto;
+    width: auto;
+    border: solid gray;
+    border-width: .1em .1em .1em .8em;
+    padding: .2em .6em;
+    
+    
+}
+.the-inside {
+    margin: 0;
+    border: 0px;
+    line-height: 125%;
+
+}
+
+
+
+/* ((((((((((((((((((((((((((()))))))))))))))))))))))))))))))) */
+.row-controler{
+    margin-top: 60px;
+}
+
+/* this is what i use to remove the border lines of any boostrap card */
+.mycard{
+    border: 0px solid rgba(158, 49, 49, 0.125) !important;
+}
+
+/* .mycontainer{
+    width: px !important;
+} */
+
+.button-control{
+    margin: 60px;
+    width: auto !important;
+}
+.mybtn{
+    background-color: #37045F;
+    color: #6ABBFF;
+    width: 100%!important;
+}
+
+.image-resize{
+    width: auto;
+    height: 200px;
+}
+
+/* for the main banner */
+
+
+/* for the table of content dropdown */
+.dropdown-menu {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+/* for the the table of content */
+/* use this class for the all the button */
+.list-group-item-color{
+    color:#fff;
+    background-color: #37045F;
+    
+}
+
+/* for Django styling */
