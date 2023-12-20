@@ -2,34 +2,37 @@
 
 {% block content %}
 
-    
-<br>
-<h3>Objects</h3>
-      
-<p>
-    Up until this point you may have have heard me reference
-     objects but never explain what they are. 
-     In python almost everything is an object!
-      When we create variables and set them equal
-       to certain data types what we are doing is 
-       creating a new object of that data type.
-        When we create objects we say they are of 
-        different classes. Each class has attributes 
-        and properties associated with it. For example
-         when we create a variable and set it = 1 we 
-         are creating a new object of class integer.
-          Integers can be added, divided, multiplied 
-          etc. We can use the “type()” function to 
-          determine what class objects belong to.
-</p>
 
-<div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
-    <pre style="margin: 0; border: 0px; line-height: 125%;">
-    <span style="color: #204a87;">type</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"hello"</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; &lt;class 'str'&gt;</span>
-    <span style="color: #204a87;">type</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">)</span>        <span style="color: #8f5902; font-style: italic;"># -&gt; &lt;class 'int'&gt;</span>
-    <span style="color: #204a87;">type</span><span style="color: #000000; font-weight: bold;">([</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">])</span>    <span style="color: #8f5902; font-style: italic;"># -&gt; &lt;class 'list'&gt;</span>
-    </pre>
-</div><br>
+
+<div class="container">
+    <div class="row">
+    <br>
+    <h3>Objects</h3>
+        
+    <p>
+        Up until this point you may have have heard me reference
+        objects but never explain what they are. 
+        In python almost everything is an object!
+        When we create variables and set them equal
+        to certain data types what we are doing is 
+        creating a new object of that data type.
+            When we create objects we say they are of 
+            different classes. Each class has attributes 
+            and properties associated with it. For example
+            when we create a variable and set it = 1 we 
+            are creating a new object of class integer.
+            Integers can be added, divided, multiplied 
+            etc. We can use the “type()” function to 
+            determine what class objects belong to.
+    </p>
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87;">type</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"hello"</span><span style="color: #000000; font-weight: bold;">)</span>  <span style="color: #8f5902; font-style: italic;"># -&gt; &lt;class 'str'&gt;</span>
+        <span style="color: #204a87;">type</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">)</span>        <span style="color: #8f5902; font-style: italic;"># -&gt; &lt;class 'int'&gt;</span>
+        <span style="color: #204a87;">type</span><span style="color: #000000; font-weight: bold;">([</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">])</span>    <span style="color: #8f5902; font-style: italic;"># -&gt; &lt;class 'list'&gt;</span>
+        </pre>
+    </div><br>
 
 <h3>Classes</h3>
 <p>
@@ -53,45 +56,28 @@
     <span style="color: #000000;">newNum</span><span style="color: #ce5c00; font-weight: bold;">.</span><span style="color: #000000;">display</span><span style="color: #000000; font-weight: bold;">()</span>
     </pre></div>
 
-<p>The __init__() is whats known as a constructor method. It is automatically called when we create a new instance of the class.
-    The display() is whats known as a method. We can use it on instances of the class.
-    
-    This tutorial is not meant for you to understand 
-    and be able to create your own classes.
-     I simply want to introduce you to the concept 
-     so you are aware that it exists and have some
-      familiarity with it.</p>
+        <p>The __init__() is whats known as a constructor method. It is automatically called when we create a new instance of the class.
+            The display() is whats known as a method. We can use it on instances of the class.
+            
+            This tutorial is not meant for you to understand 
+            and be able to create your own classes.
+            I simply want to introduce you to the concept 
+            so you are aware that it exists and have some
+            familiarity with it.</p>
 
        <div class="mt-5 mb-5">
            <a href="{% url 'franklymade' %}"><button type="button" class="btn mybtn">Congratulations on completing the introduction to python programming</button></a>
        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </div>
 
 
 
+    </div>
+
+    </div>
+    <!-- row ends -->
 </div>
+<!-- container ends -->
 {% endblock %}
 <!-- Blog entry ends  -->

@@ -5,8 +5,11 @@
  <div class="dropdow list-group">
     <a href="#" class="dropdown-toggle btn list-group-item-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View table of content<span class="caret btn "></span></a>
     <ul class="dropdown-menu">
-    <li><a href="{% url 'courses' 1  %}" class="list-group-item list-group-item-action list-group-item-color">Variables & Data Types </a></li>
-   <li> <a href="{% url 'courses' 2  %}" class="list-group-item list-group-item-action list-group-item-color">Operators and input</a></li>
+      {% for post in course %}  
+        <li><a href="{% url 'courses' post.id  %}" class="list-group-item list-group-item-action list-group-item-color">{{post.title}} </a></li>
+        {% endfor %}
+    <!-- <li><a href="{% url 'courses' 1  %}" class="list-group-item list-group-item-action list-group-item-color">Variables & Data Types </a></li> -->
+   <!-- <li> <a href="{% url 'courses' 2  %}" class="list-group-item list-group-item-action list-group-item-color">Operators and input</a></li>
     <li><a href="{% url 'courses' 3  %}" class="list-group-item list-group-item-action list-group-item-color">conditions</a></li>
     <li><a href="{% url 'courses' 4  %}" class="list-group-item list-group-item-action list-group-item-color">IF/ELIF/ELSE</a></li>
     <li><a href="{% url 'courses' 5  %}" class="list-group-item list-group-item-action list-group-item-color">Chained Conditionals and Nested statements</a>
@@ -24,7 +27,7 @@
     <li><a href="{% url 'courses' 15  %}" class="list-group-item list-group-item-action list-group-item-color">Modular Programm</a></li>
     <li><a href="{% url 'courses' 16  %}" class="list-group-item list-group-item-action list-group-item-color">Error Handling(try and except</a></li>
     <li><a href="{% url 'courses' 17  %}" class="list-group-item list-group-item-action list-group-item-color">what is global a</a></li>
-    <li><a href="{% url 'courses' 18  %}" class="list-group-item list-group-item-action list-group-item-color">Classes and Objects</a></li>
+    <li><a href="{% url 'courses' 18  %}" class="list-group-item list-group-item-action list-group-item-color">Classes and Objects</a></li> -->
        
 
     </ul>

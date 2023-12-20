@@ -5,6 +5,7 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .forms import PostCourseForm
 
 # for the franklymade homepage
 def franklymade_home(request):
@@ -40,20 +41,11 @@ def python_intro(request):
 def python_cours_details(request, course_id):
     try:
         course = PythonCourse.objects.get(pk=course_id)
-       
-       
     except:
         return redirect('python_intro')
        
 
     else:
-        
-        
-
-       
-    
-
-
         # if course.DoesNotExist:
         #     return redirect('python_intro')
 
@@ -119,7 +111,44 @@ def python_cours_details(request, course_id):
             # return HttpResponseRedirect(reverse('python_intro', args=(course.id,)))
 
     return redirect('python_intro')
+
+
     
+
+def create_course(request):
+    title = 'Create blog post'
+    err_msg = ''
+    message = ""
+    
+    if request.user.is_authenticated:
+        # try:
+        form = PostCourseForm(request.POST or None, request.FILES or None)
+        
+        
+        if request.method == "POST":
+            if form.is_valid():
+                
+                form.save()
+
+                return redirect(reverse("courses", kwargs={
+                    'id':form.instance.id
+                }))
+        # except IntegrityError as e :
+        #     e = "please contact admin  to gain access to post your blog"
+        #     err_msg = e
+        #     print(err_msg)
+        #     pass
+    
+    message = err_msg
+    
+    context = {
+        # 'title':title,
+        
+        'message':message,
+        'form':form,
+        }
+
+    return render(request, 'tutorial/create_course.html', context)
     
 
 # search function

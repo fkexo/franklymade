@@ -40,6 +40,8 @@ ALLOWED_HOSTS = ['localhost', 'franklymade-nncs.onrender.com']
 # Application definition
 
 INSTALLED_APPS = [
+    
+
     'blog',
     'tutorial',
     'portinfo',
@@ -49,7 +51,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trumbowyg',
+
+    'tinymce',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,15 +145,76 @@ USE_I18N = True
 USE_TZ = True
 
 
+# for the tinymce configuration
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # lets tell django where to look for static files in our project folder
 STATICFILES_DIRS =[ os.path.join(BASE_DIR, 'franklymade/static'),
 ]
+
+
+# for the tinymce
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd5j8gbnfmt7lv8',
+#         'USER': '{}'.format(database_USER),
+#         'PASSWORD': '{}'.format(database_PASSWORD),
+#         'HOST': 'ec2-3-212-90-231.compute-1.amazonaws.com'
+#     }
+# }
+
+
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
+
+# this is for tinyMCE Configuration
+# TINYMCE_JS_URL = os.path.join(STATIC_URL,"django-tinymce-master/tinymce/media/tiny_mce/tiny_mce_src.js")
+# TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, "django-tinymce-master/tinymce")
+
+# TINYMCE_DEFAULT_CONFIG = {
+#     'height': 360,
+#     'width': 1120,
+#     'cleanup_on_startup': True,
+#     'custom_undo_redo_levels': 20,
+#     'selector': 'textarea',
+#     'theme': 'modern',
+#     'plugins': '''
+#             textcolor save link image media preview codesample contextmenu
+#             table code lists fullscreen  insertdatetime  nonbreaking
+#             contextmenu directionality searchreplace wordcount visualblocks
+#             visualchars code fullscreen autolink lists  charmap print  hr
+#             anchor pagebreak
+#             ''',
+#     'toolbar1': '''
+#             fullscreen preview bold italic underline | fontselect,
+#             fontsizeselect  | forecolor backcolor | alignleft alignright |
+#             aligncenter alignjustify | indent outdent | bullist numlist table |
+#             | link image media | codesample |
+#             ''',
+#     'toolbar2': '''
+#             visualblocks visualchars |
+#             charmap hr pagebreak nonbreaking anchor |  code |
+#             ''',
+#     'contextmenu': 'formats | link image',
+#     'menubar': True,
+#     'statusbar': True,
+#     }
+
+
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
