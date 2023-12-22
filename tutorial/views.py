@@ -38,9 +38,9 @@ def python_intro(request):
     return render(request, 'tutorial/python_intro.html', context)
 
 
-def python_cours_details(request, course_id):
+def python_cours_details(request, slug):
     try:
-        course = PythonCourse.objects.get(pk=course_id)
+        course = PythonCourse.objects.get(slug=slug)
     except:
         return redirect('python_intro')
        
@@ -50,60 +50,60 @@ def python_cours_details(request, course_id):
         #     return redirect('python_intro')
 
             
-        if course.id == 1:
+        if slug == 'Variables-And-Data-Types':
             context = {'course':course}
             return render(request, 'tutorial/variable_and_datatype.html', context)
-        elif course_id == 2:
+        elif slug == 'Operators-and-Input':
             context = {'course':course}
             return render(request, 'tutorial/operators_and_input.html', context)
-        elif course_id == 3:
+        elif slug == 'Conditions':
             context = {'course':course}
             return render(request, 'tutorial/conditions.html', context)
-        elif course_id == 4:
+        elif slug == 'If-Elif-Else-statements':
             context = {'course':course}
             return render(request, 'tutorial/if_else.html', context)
-        elif course_id == 5:
+        elif slug == 'Chained-Conditionals-And-Nested-Statement':
             context = {'course':course}
             return render(request, 'tutorial/nested_statements.html', context)
-        elif course_id == 6:
+        elif slug == 'For-Loop':
             context = {'course':course}
             return render(request, 'tutorial/forloops.html', context)
-        elif course_id == 7:
+        elif slug == 'While-Loops':
             context = {'course':course}
             return render(request, 'tutorial/whileloops.html', context)
-        elif course_id == 8:
+        elif slug == 'List-and-Tuples':
             context = {'course':course}
             return render(request, 'tutorial/listandtuple.html', context)
-        elif course_id == 9:
+        elif slug == 'String-methods':
             context = {'course':course}
             return render(request, 'tutorial/string_method.html', context)
     
 
-        elif course_id == 10:
+        elif slug == 'Slice-operator':
             context = {'course':course}
             return render(request, 'tutorial/slice_operator.html', context)
-        elif course_id == 11:
+        elif slug == 'Functions':
             context = {'course':course}
             return render(request, 'tutorial/functions.html', context)
-        elif course_id == 12:
+        elif slug == 'Read-Files':
             context = {'course':course}
             return render(request, 'tutorial/reading_files.html', context)
-        elif course_id == 13:
+        elif slug == 'Write-Files':
             context = {'course':course}
             return render(request, 'tutorial/writing_files.html', context)
-        elif course_id == 14:
+        elif slug == 'List-Method':
             context = {'course':course}
             return render(request, 'tutorial/listmethod.html', context)
-        elif course_id == 15:
+        elif slug == 'Modular-Programming':
             context = {'course':course}
             return render(request, 'tutorial/modular_programing.html', context)
-        elif course_id == 16:
+        elif slug == 'Error-Handling':
             context = {'course':course}
             return render(request, 'tutorial/error_handling.html', context)
-        elif course_id == 17:
-            context = {'course':course}
-            return render(request, 'tutorial/global_vs_local.html', context)
-        elif course_id == 18:
+        # elif slug == 21:
+        #     context = {'course':course}
+        #     return render(request, 'tutorial/global_vs_local.html', context)
+        elif slug == 'Classes-and-objects':
             context = {'course':course}
             return render(request, 'tutorial/classes_and_objects.html', context)
   

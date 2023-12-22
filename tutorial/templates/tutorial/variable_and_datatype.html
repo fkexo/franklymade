@@ -1,6 +1,20 @@
 {% extends 'franklymade/pythonbase.html' %}
 
 {% block content %}
+        <div class="row row-controler">
+
+                
+                <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+                        <!-- Search Widget -->
+                        {% include 'franklymade/included/searchbar.html' %}
+                        <!-- Categories Widget -->
+                        {% include 'franklymade/included/table_of_content.html' %}
+                        
+                        <!-- this is the collapse for the side bar list items -->
+                        
+        </div>
+        <div class="col-md-8 mb-5" > 
     
           <br>
         <h3>Getting started</h3>
@@ -104,10 +118,14 @@ To reference our variables we simply type their name.
         </p>
 
         <div class="mt-5 mb-5">
-                <a href="{% url 'courses' 5 %}"><button type="button" class="btn mybtn">Next Lesson</button></a>
+                
+                <a href="/lesson/Operators-and-Input"><button type="button" class="btn list-group-item-color mb-5 mt-5 " style="width: 100%;">Next Lesson</button></a>
+                
             </div>
      
 
 </div>
+        </div>
+        </div>
 {% endblock %}
 <!-- Blog entry ends  -->

@@ -51,7 +51,7 @@
 
             <!-- Blog Entries Column -->
           
-              {% if course  %}
+              <!-- {% if course  %}
               
             <div class="col-md-8 mb-5 " >  
 
@@ -65,7 +65,11 @@
                 </div>
               
             </div>
-            {% endif %}
+            {% endif %} -->
+            <div class="col-md-8 mb-5 " >   
+              {% block course_content %}
+              {% endblock %}
+            </div>
 
             <!-- /.row -->
 

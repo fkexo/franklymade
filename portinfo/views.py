@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 
 def portinfo_home(request):
     
-    return render(request, 'portinfo/portinfo_home.html')
+    return render(request, 'portinfo/dist/index.html')
     
 
 def allProjects(request):

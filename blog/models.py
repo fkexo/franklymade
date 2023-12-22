@@ -4,6 +4,7 @@ from django.db import models
 
 class Article(models.Model):
     title = models.CharField(max_length=300)
+    slug = models.SlugField(null=True)
     body =  models.TextField(max_length=3000)
     postimage = models.FileField(blank=True, null=True)
     postdate = models.DateTimeField(auto_now_add=True)

@@ -5,30 +5,26 @@
  <div class="dropdow list-group">
     <a href="#" class="dropdown-toggle btn list-group-item-color" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View table of content<span class="caret btn "></span></a>
     <ul class="dropdown-menu">
-      {% for post in course %}  
-        <li><a href="{% url 'courses' post.id  %}" class="list-group-item list-group-item-action list-group-item-color">{{post.title}} </a></li>
-        {% endfor %}
-    <!-- <li><a href="{% url 'courses' 1  %}" class="list-group-item list-group-item-action list-group-item-color">Variables & Data Types </a></li> -->
-   <!-- <li> <a href="{% url 'courses' 2  %}" class="list-group-item list-group-item-action list-group-item-color">Operators and input</a></li>
-    <li><a href="{% url 'courses' 3  %}" class="list-group-item list-group-item-action list-group-item-color">conditions</a></li>
-    <li><a href="{% url 'courses' 4  %}" class="list-group-item list-group-item-action list-group-item-color">IF/ELIF/ELSE</a></li>
-    <li><a href="{% url 'courses' 5  %}" class="list-group-item list-group-item-action list-group-item-color">Chained Conditionals and Nested statements</a>
-    <li><a href="{% url 'courses' 6  %}" class="list-group-item list-group-item-action list-group-item-color">For Loops</a></li>
-    <li><a href="{% url 'courses' 7  %}" class="list-group-item list-group-item-action list-group-item-color">While Loops</a></li>
-    <li><a href="{% url 'courses' 8  %}" class="list-group-item list-group-item-action list-group-item-color">List and Tuples</a></li>
-    <li><a href="{% url 'courses' 9  %}" class="list-group-item list-group-item-action list-group-item-color">String methods</a></li>
-    <li><a href="{% url 'courses' 7  %}" class="list-group-item list-group-item-action list-group-item-color">While Loops</a></li>
-    <li><a href="{% url 'courses' 10  %}" class="list-group-item list-group-item-action list-group-item-color">Slice Operator</a></li>
-    <li><a href="{% url 'courses' 11  %}" class="list-group-item list-group-item-action list-group-item-color">Functions</a></li>
-    <li><a href="{% url 'courses' 12  %}" class="list-group-item list-group-item-action list-group-item-color">File IO (Read Files)</a></li>
-    <li><a href="{% url 'courses' 13  %}" class="list-group-item list-group-item-action list-group-item-color">File IO (Write Files)</a></li>
-    <li><a href="{% url 'courses' 14  %}" class="list-group-item list-group-item-action list-group-item-color">List Methods</a></li>
+
+    <li><a href="/lesson/Variables-And-Data-Types" class="list-group-item list-group-item-action list-group-item-color">Variables & Data Types </a></li>
+  <li> <a href="/lesson/Operators-and-Input" class="list-group-item list-group-item-action list-group-item-color">Operators and input</a></li>
+    <li><a href="/lesson/Conditions" class="list-group-item list-group-item-action list-group-item-color">conditions</a></li>
+    <li><a href="/lesson/If-Elif-Else-statements" class="list-group-item list-group-item-action list-group-item-color">IF/ELIF/ELSE</a></li>
+    <li><a href="/lesson/Chained-Conditionals-And-Nested-Statement" class="list-group-item list-group-item-action list-group-item-color">Chained Conditionals and Nested statements</a>
+    <li><a href="/lesson/For-Loop" class="list-group-item list-group-item-action list-group-item-color">For Loops</a></li>
+    <li><a href="/lesson/While-Loops class="list-group-item list-group-item-action list-group-item-color">While Loops</a></li>
+    <li><a href="/Lesson/List-and-Tuples" class="list-group-item list-group-item-action list-group-item-color">List and Tuples</a></li>
+    <li><a href="/lesson/String-methods" class="list-group-item list-group-item-action list-group-item-color">String methods</a></li>
+    <li><a href="/lesson/Slice-operator" class="list-group-item list-group-item-action list-group-item-color">While Loops</a></li>
+    <li><a href="/lesson/Functions" class="list-group-item list-group-item-action list-group-item-color">Slice Operator</a></li>
+    <li><a href="/lesson/Read-Files" class="list-group-item list-group-item-action list-group-item-color">Functions</a></li>
+    <li><a href="/lesson/Write-Files" class="list-group-item list-group-item-action list-group-item-color">File IO (Read Files)</a></li>
+    <li><a href="/lesson/List-Method" class="list-group-item list-group-item-action list-group-item-color">File IO (Write Files)</a></li>
+    <li><a href="/lesson/Modular-Programming" class="list-group-item list-group-item-action list-group-item-color">List Methods</a></li>
     
-    <li><a href="{% url 'courses' 15  %}" class="list-group-item list-group-item-action list-group-item-color">Modular Programm</a></li>
-    <li><a href="{% url 'courses' 16  %}" class="list-group-item list-group-item-action list-group-item-color">Error Handling(try and except</a></li>
-    <li><a href="{% url 'courses' 17  %}" class="list-group-item list-group-item-action list-group-item-color">what is global a</a></li>
-    <li><a href="{% url 'courses' 18  %}" class="list-group-item list-group-item-action list-group-item-color">Classes and Objects</a></li> -->
-       
+    <li><a href="/lesson/Error-Handling" class="list-group-item list-group-item-action list-group-item-color">Modular Programm</a></li>
+    <li><a href="/lesson/Classes-and-objects" class="list-group-item list-group-item-action list-group-item-color">Error Handling(try and except</a></li>
+   
 
     </ul>
 </div>

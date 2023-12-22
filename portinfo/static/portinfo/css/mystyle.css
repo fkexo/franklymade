@@ -1,6 +1,10 @@
 
+/* for the nav bar */
 
-.image_resize{
-    width: 500px !important;
-    height: 210px !important;
+.bg-secondary {
+    --bs-bg-opacity: 1;
+    background-color: #E4B587 !important;
 }
+
+
+
