@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'trumbowyg',
 
-    'tinymce',
+    # 'tinymce',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
