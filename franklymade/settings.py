@@ -83,6 +83,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'franklymade/templates'),
+            os.path.join(BASE_DIR, 'portinfo/templates'),
+            os.path.join(BASE_DIR, 'portinfo/templates/portinfo'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
