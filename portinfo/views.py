@@ -41,7 +41,7 @@ def portinfo_home(request):
     
     context = {'contact_me_form':form,}
     
-    return render(request, 'portinfo/dist/index.html', context)
+    return render(request, 'portinfo/dist/home.html', context)
     
 
 def allProjects(request):
