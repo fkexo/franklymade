@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import AddProject
 from django.core.mail import send_mail
+from .forms import Contact_Me_Form
+from django.contrib import messages
 
 
 
@@ -8,7 +10,38 @@ from django.core.mail import send_mail
 
 def portinfo_home(request):
     
-    return render(request, 'portinfo/dist/index.html')
+    form = Contact_Me_Form()
+    response = ""
+    if form.is_valid():
+        name = form.cleaned_data["name"]
+        email = form.cleaned_data["email"]
+        phone = form.cleaned_data["phone"]
+        message = form.cleaned_data["message"]
+
+        subject = name
+        message = message
+        sender = email
+        phone = phone
+
+        recipients = ["frankmadu2live@gmail.com"]
+        
+        try:
+            send_mail(f'{subject}', f'{message}', f'{sender}', ['frankmadu2live@gmail.com'])
+            messages.success(request, f"Hell! {subject}, your message was sent successfully, we would reply you shortly")
+            return redirect('portinfo')
+
+            
+        except:
+            messages.success(request, f"{subject}, your message was not sent ")
+            
+            return redirect('portinfo')
+
+       
+
+    
+    context = {'contact_me_form':form,}
+    
+    return render(request, 'portinfo/dist/index.html', context)
     
 
 def allProjects(request):
@@ -21,5 +54,4 @@ def projectDetails(request):
     return render(request, 'portinfo/projectdetails.html')
     
 
-    
 
