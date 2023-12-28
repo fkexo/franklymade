@@ -174,8 +174,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # lets tell django where to look for static files in our project folder
 STATICFILES_DIRS =[ os.path.join(
     BASE_DIR, 'franklymade/static',
-    BASE_DIR, 'portinfo/static',
-    BASE_DIR, 'portinfo/static/portinfo',
     ),
 ]
 
