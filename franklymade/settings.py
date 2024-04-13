@@ -32,16 +32,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'franklymade-nncs.onrender.com']
+DEBUG = os.environ.get('DEBUG', 'False') == "False"
+
+
+ALLOWED_HOSTS = ['localhost', 'franklymade-nncs.onrender.com', 'http://127.0.0.1:8000', 'localhost/admin']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     
-
+    'accounts',
+    'tech',
     'blog',
     'tutorial',
     'portinfo',
@@ -85,6 +88,8 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'franklymade/templates'),
             os.path.join(BASE_DIR, 'portinfo/templates'),
             os.path.join(BASE_DIR, 'portinfo/templates/portinfo'),
+            
+           
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -104,17 +109,17 @@ WSGI_APPLICATION = 'franklymade.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -192,41 +197,6 @@ STATICFILES_DIRS =[ os.path.join(
 
 # db_from_env = dj_database_url.config()
 # DATABASES['default'].update(db_from_env)
-
-# this is for tinyMCE Configuration
-# TINYMCE_JS_URL = os.path.join(STATIC_URL,"django-tinymce-master/tinymce/media/tiny_mce/tiny_mce_src.js")
-# TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, "django-tinymce-master/tinymce")
-
-# TINYMCE_DEFAULT_CONFIG = {
-#     'height': 360,
-#     'width': 1120,
-#     'cleanup_on_startup': True,
-#     'custom_undo_redo_levels': 20,
-#     'selector': 'textarea',
-#     'theme': 'modern',
-#     'plugins': '''
-#             textcolor save link image media preview codesample contextmenu
-#             table code lists fullscreen  insertdatetime  nonbreaking
-#             contextmenu directionality searchreplace wordcount visualblocks
-#             visualchars code fullscreen autolink lists  charmap print  hr
-#             anchor pagebreak
-#             ''',
-#     'toolbar1': '''
-#             fullscreen preview bold italic underline | fontselect,
-#             fontsizeselect  | forecolor backcolor | alignleft alignright |
-#             aligncenter alignjustify | indent outdent | bullist numlist table |
-#             | link image media | codesample |
-#             ''',
-#     'toolbar2': '''
-#             visualblocks visualchars |
-#             charmap hr pagebreak nonbreaking anchor |  code |
-#             ''',
-#     'contextmenu': 'formats | link image',
-#     'menubar': True,
-#     'statusbar': True,
-#     }
-
-
 
 
 

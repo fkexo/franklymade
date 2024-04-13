@@ -1,0 +1,17 @@
+{% extends 'franklymade/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+{{user.username}}
+<form method="POST" >
+    {% csrf_token %}
+
+    {{form|crispy}}
+
+<button>submit</button>
+</form>
+
+{% endblock %}

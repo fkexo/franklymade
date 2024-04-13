@@ -1,4 +1,6 @@
+
 {% load static %}
+
 
 
 <!DOCTYPE html>
@@ -23,9 +25,19 @@
 
 
    <!-- Place the first <script> tag in your HTML's <head> -->
-<script src="https://cdn.tiny.cloud/1/b0mh6y2zj4en80w9lk3cc7eptf9plj2v3orc6oj5u2o00wi0/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<!-- <script src="https://cdn.tiny.cloud/1/b0mh6y2zj4en80w9lk3cc7eptf9plj2v3orc6oj5u2o00wi0/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
+<script src="https://cdn.tiny.cloud/1/a98pw8k8dm6tpocfj5lrhu1e9v264so1mzzq1894ybbk8ilu/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
+<script>
+  tinymce.init({
+      selector: 'textarea',
+      plugins: 'autolink lists link image charmap print preview anchor',
+      toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
+  });
+  </script>
 <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+
+
 
 </head>
 

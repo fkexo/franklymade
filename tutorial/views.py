@@ -5,7 +5,9 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import PostCourseForm
+from .forms import CourseForm
+
+
 
 # for the franklymade homepage
 def franklymade_home(request):
@@ -37,6 +39,15 @@ def python_intro(request):
     context = {}
     return render(request, 'tutorial/python_intro.html', context)
 
+
+
+def courseDetail(request, slug):
+    pass
+    course = get_object_or_404(Course, slug=slug)
+    
+    context={'course':course}
+
+    return render(request, 'tutorial/course_details.html', context)
 
 def python_cours_details(request, slug):
     try:
@@ -116,13 +127,15 @@ def python_cours_details(request, slug):
     
 
 def create_course(request):
-    title = 'Create blog post'
+    pass
+    
     err_msg = ''
     message = ""
     
     if request.user.is_authenticated:
+        print('USER IS AUTHENTICATED++++++++++++++')
         # try:
-        form = PostCourseForm(request.POST or None, request.FILES or None)
+        form = CourseForm(request.POST or None, request.FILES or None)
         
         
         if request.method == "POST":
@@ -130,9 +143,13 @@ def create_course(request):
                 
                 form.save()
 
-                return redirect(reverse("courses", kwargs={
-                    'id':form.instance.id
+                return redirect(reverse("course", kwargs={
+                    'slug':form.instance.slug
                 }))
+            else:
+                print('this form is not valid')
+        else:
+            print()
         # except IntegrityError as e :
         #     e = "please contact admin  to gain access to post your blog"
         #     err_msg = e
@@ -142,13 +159,13 @@ def create_course(request):
     message = err_msg
     
     context = {
-        # 'title':title,
+       
         
         'message':message,
         'form':form,
         }
 
-    return render(request, 'tutorial/create_course.html', context)
+    return render(request, 'tutorial/management/create_course.html', context)
     
 
 # search function
