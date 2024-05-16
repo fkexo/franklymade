@@ -45,6 +45,17 @@ class Category(models.Model):
     def __str__(self):
         return self.cat_name
 
+    
+class CourseSeries(models.Model):
+    course_title = models.CharField(max_length=200)
+    description = models.TextField(default='description')
+    date_created = models.DateField(auto_now_add=True)
+    tag = models.ManyToManyField(Tag, default='python')
+
+
+    def __str__(self):
+        return self.course_title
+    
 class Lesson(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
@@ -53,17 +64,9 @@ class Lesson(models.Model):
     lesson_content = models.TextField(blank=True, null=True)
     lesson_count = models.IntegerField(default=0)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, blank=True, null=True)
+    course_series = models.ForeignKey(CourseSeries, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.title
-    
-class CourseSeries(models.Model):
-    course_title = models.CharField(max_length=200)
-    description = models.TextField(default='description')
-    date_created = models.DateField(auto_now_add=True)
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.course_title
-    
 
