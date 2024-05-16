@@ -7,15 +7,9 @@ from .models import Article
 
 
 
-class TinyMCEWidget(Textarea):
-    def __init__(self, attrs=None):
-        if attrs is None:
-            attrs = {}
-        attrs['class'] = 'tinymce'
-        super().__init__(attrs=attrs)
-
 class MyForm(forms.Form):
-    description= forms.CharField(widget=TinyMCEWidget)
+    # description= forms.CharField(widget=TinyMCEWidget)
+    pass
 
 
 

@@ -1,6 +1,6 @@
 from django.db import models
 
-from tinymce import models as tinymce_models
+
 
 
 
@@ -18,7 +18,7 @@ class NewsCategory(models.Model):
 class News(models.Model):
     image = models.ImageField(upload_to='profile_pics/', default='default.jpg')
     title = models.CharField(max_length=200)
-    content = tinymce_models.HTMLField()
+    content = models.TextField(default='content')
     slug = models.SlugField()
     pup_date = models.DateTimeField(auto_now_add=True)
     news_category = models.ForeignKey(NewsCategory, on_delete=models.CASCADE)
