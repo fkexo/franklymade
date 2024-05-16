@@ -3,10 +3,11 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('services', views.services, name='services'),
-    path('article/<int:article_id>', views.viewBlog, name='myarticle'),
-    path('about', views.about_blog, name='about_blog'),
+    path('', views.blogHome, name='blog_home'),
+    
+    path('article/<slug:slug>', views.viewBlog, name='myarticle'),
+    path('add_article/', views.addArticle, name='add_article'),
+
 
 ]
 

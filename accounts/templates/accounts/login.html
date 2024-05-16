@@ -1,37 +1,27 @@
-{% extends 'accounts/accountbase.html' %}
+{% extends 'franklymade/base.html' %}
   <!--Main Navigation-->
  
-{% block content %}
+
   <!--Main Navigation-->
   <header>
-    <style>
-      #intro {
-        background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
-        height: 100vh;
-      }
-
-      /* Height for devices larger than 576px */
-      @media (min-width: 992px) {
-        #intro {
-          margin-top: -58.59px;
-        }
-      }
-
-      .navbar .nav-link {
-        color: #fff !important;
-      }
-    </style>
+   
+</header>
 
     <!-- Navbar -->
     <!-- Navbar -->
-
+{% block content %}
     <!-- Background image -->
     <div id="intro" class="bg-image shadow-2-strong">
       <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8">
-              <form action='{% url 'login' %}' method='post' class="bg-white  rounded-5 shadow-5-strong p-5">
+            <div class="text-center mt-5 mb5 text-white"><h4>Signin to your account</h4></div>
+              <var>
+
+              </var>
+
+              <form action="{% url 'login' %}" method='post' class="bg-white  rounded-5 shadow-5-strong p-5">
                 {% csrf_token %}
                 <!-- Email input -->
                 <div class="form-outline mb-4">
@@ -66,9 +56,21 @@
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                <button type="submit" class="btn mybtn btn-block">Sign in</button>
                 <div class="col text-center">
                   <!-- Simple link -->
+                  {% if messages %}
+
+                    
+                      <ul  class="badge messages" >
+                        {% for message in messages %}
+                          
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><h2>{{message }}</h2></li>
+
+                        {% endfor %}
+                      </ul>
+                  {% endif %}
+
                  <p> Don't have an account <a href="{% url 'register' %}">SignUp</a></p>
                 </div>
               </form>
@@ -76,9 +78,11 @@
           </div>
         </div>
       </div>
+
+     
     </div>
     <!-- Background image -->
-  </header>
+ 
   <!--Main Navigation-->
 
   <!--Footer-->

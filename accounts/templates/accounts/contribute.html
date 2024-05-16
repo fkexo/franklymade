@@ -1,0 +1,50 @@
+{% extends 'franklymade/base.html' %}
+
+
+
+s{% block content %}
+
+  {% if user.is_authenticated %}
+  <pre>
+
+
+  </pre>
+
+  <div>
+      <h5 style="text-decoration: none;" class="text-center">contribute</h5>
+  </div>
+
+  <pre>
+
+  </pre>
+
+    <div> 
+      <nav style="" aria-label="breadcrumb">
+        <ol class=" mybreadcrumb breadcrumb">
+          
+        </ol>
+      </nav>
+      <nav style="" aria-label="breadcrumb">
+        <ol class=" text-center mybreadcrumb-2 breadcrumb">
+          <li class=" small-btn breadcrumb-item"><a href="{% url 'add_tech_news' %}">Add Tech News</a></li>
+
+          <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="{% url 'add_lesson' %}">Add lesson</a></li>
+          <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="{% url 'add_article' %}">Add Article</a></li>
+        
+        </ol>
+      </nav>
+    </div>
+
+
+  {% else %}
+
+
+
+      <h4> please request for post access to contribute on this site</h4>
+      <pre>
+      </pre>
+      <h6>Thank you for your interest in contributing to this site</h6>
+      <button  style="text-decoration: none;" class=" small-btn breadcrumb-item active" aria-current="pag"><a href="mailto:frank4everreal@gmiail.com">Send a mail</a></button>
+  {% endif %}
+
+{% endblock %}

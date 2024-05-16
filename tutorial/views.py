@@ -1,19 +1,43 @@
 
 from django.shortcuts import render, redirect
-from .models import PythonCourse
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import CourseForm
+
+from django.db import IntegrityError
+from django.contrib import messages
+
+from .models import Author,\
+Lesson, Category
 
 
+
+
+
+def get_author(user):
+    queryset = Author.objects.filter(author=user)
+    if queryset.exists():
+        return queryset[0]
+    return None
 
 # for the franklymade homepage
-def franklymade_home(request):
-    context = {}
-    return render(request, 'tutorial/tutorial_home.html', context)
+def tutorial_home(request):
+    lesson_list = Lesson.objects.all()
+    category_list = Category.objects.all()
+    context = {'lesson_list':lesson_list,
+               "category":category_list,
+               }
+    return render(request, 'tutorial/management/tutorial_home.html', context)
 
+def lessonContent(request, slug):
+    lesson = get_object_or_404(Lesson, slug=slug)
+    
+    context={
+        'lesson':lesson,
+        }
+
+    return render(request, 'tutorial/management/lesson.html', context)
 # for the search bar
 # i still need to work on this function for it to be able to find the required keyword
 def searchBar(request):
@@ -37,13 +61,13 @@ def searchBar(request):
 # for the python tutorials
 def python_intro(request):   
     context = {}
-    return render(request, 'tutorial/python_intro.html', context)
+    return render(request, 'tutorial/.html', context)
 
 
 
 def courseDetail(request, slug):
     pass
-    course = get_object_or_404(Course, slug=slug)
+    course = get_object_or_404(Lesson, slug=slug)
     
     context={'course':course}
 
@@ -126,42 +150,35 @@ def python_cours_details(request, slug):
 
     
 
-def create_course(request):
-    pass
-    
-    err_msg = ''
-    message = ""
-    
-    if request.user.is_authenticated:
-        print('USER IS AUTHENTICATED++++++++++++++')
-        # try:
-        form = CourseForm(request.POST or None, request.FILES or None)
-        
-        
-        if request.method == "POST":
-            if form.is_valid():
-                
-                form.save()
+def addLesson(request):
 
-                return redirect(reverse("course", kwargs={
-                    'slug':form.instance.slug
-                }))
+    try:
+        if request.user.is_authenticated:
+            print('USER IS AUTHENTICATED++++++++++++++')
+            # try:
+            form = LessonForm(request.POST or None, request.FILES or None)
+            author = get_author(request.user)
+            
+            if request.method == "POST":
+                if form.is_valid():
+                    form.instance.author = author
+                    form.save()
+
+                    return redirect(reverse("lesson", kwargs={
+                        'slug':form.instance.slug
+                    }))
+                else:
+                    print('this form is not valid')
+                    return redirect('create_course')
             else:
-                print('this form is not valid')
-        else:
-            print()
-        # except IntegrityError as e :
-        #     e = "please contact admin  to gain access to post your blog"
-        #     err_msg = e
-        #     print(err_msg)
-        #     pass
-    
-    message = err_msg
+                print()
+    except IntegrityError:
+        messages.error(request, "please contact admin  to gain access to post your blog")
+        return redirect('create_course')
     
     context = {
-       
-        
-        'message':message,
+        'author'
+        'messages':messages.get_messages(request),
         'form':form,
         }
 

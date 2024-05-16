@@ -4,14 +4,39 @@
 
 {% block content %}
 
+<div>
+        <div class="text-center mt-5 mb5 mybtn text-white"><h4>{{user.username}} - Create course</h4></div>
+        <var>
 
-{{user.username}}
-<form method="POST" >
-    {% csrf_token %}
+        </var>
+        
+        {% if messages %}
+        {% for message in messages %}
+        <ul class="messages badge ">
+            <li {% if message.tag %} class="{{message.tag}}"{% endif %}>{{message}}</li>
 
-    {{form|crispy}}
+        </ul>
+        {% endfor %}
 
-<button>submit</button>
-</form>
+        {% endif %}
+        <form method="POST" >
+            {% csrf_token %}
+
+            {{form|crispy}}
+
+        <button class="mybtn">submit</button>
+        <var>
+
+            
+        </var>
+        </form>
+        <var>
+
+
+
+
+
+        </var>
+</div>
 
 {% endblock %}

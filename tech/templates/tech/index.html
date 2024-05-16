@@ -4,8 +4,100 @@
 
 {% block content %}
 <div class="container">
-this is the home of tech
+  <!-- home header banner -->
+  <header class=" text-center">
+    <div class="showcase">
+      <img src="{% static  'franklymade/images/Banner.png' %}" alt="not found">
+      <div style=" margin-top: 10px;" class="card-img-overlay">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <p class="card-text"><small></small></p>
+      </div>
+    </div>
+  </header>
+
+
+    <!-- this pre is used to add space -->
+    <pre>
+      
+    </pre>
+
+
+    <!-- breadcrumb -->
+    
+      <div> 
+        <nav style="" aria-label="breadcrumb">
+          <ol class=" mybreadcrumb breadcrumb">
+            
+          </ol>
+        </nav>
+        <nav style="" aria-label="breadcrumb">
+          <ol class=" text-center mybreadcrumb-2 breadcrumb">
+            <li class=" small-btn breadcrumb-item"><a href="#">Web development</a></li>
+            <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Block chain technology</a></li>
+            <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Full stack web development</a></li>
+            <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Smart contract</a></li>
+          </ol>
+        </nav>
+      </div>
   
-  </div>
+    
+      
+       
+      <pre>
+          
+        
+      </pre>
+      <!-- the tech new banner -->
+    
+      <div class="row">
+        
+          <!-- the carousel -->
+        <div class="col-sm-8 mb-3 mb-sm-0">
+          {% include 'franklymade/included/banner_carousel.html' %}
+         
+        </div>
+     
+        <div class="col-sm-4">
+          <div class="card" style="width: auto;">
+            <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+            <div style="background-color: #a794b9b8;" class="card-body">
+              <h5>featured lesson</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <pre>
+
+      </pre>
+     <!-- caurosel tech news section-->
+     <section>      
+       {% include 'franklymade/included/multicard_carousel.html' %}
+      </section>
+      <pre>
+      </pre>
+      
+    <section class="mb-5">
+      <div class="card mb-3" style="">
+        <div class="row g-0">
+          <div class="col-sm-8" style="padding-right: 0px; padding-left: 0px; ">
+            <img src="{% static 'franklymade/images/pexels4.jpg' %}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div style=" border: solid 2px; border-color: rgb(83, 17, 75); min-width: 200px; height: auto; background-color:#a794b9b8 ;" class="col-sm-4">
+            <div class="card-body ">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+     
+  
+
+</div>
 {% endblock %}
  

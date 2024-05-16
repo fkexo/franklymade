@@ -1,3 +1,200 @@
+{% extends 'franklymade/tutorial_base.html' %}
 
 
-<bold>this is the course details for the tutorials </bold>
+{% block course_content %}
+    <br>
+   <h3>Functions</h3>
+    
+   <p>Now it's time to talk about functions! In math functions
+        simply apply operations to a given input and 
+        return some output. Now in computing not all 
+        functions require input and not all functions 
+        give output. The basic idea is that a function 
+        is a block of code that does something. 
+        Typically we use functions when we repeat the 
+        same or a similar task. One of the most basic 
+        examples of a function is seen below:</p>
+
+
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">addTwo</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">x</span><span style="color: #000000; font-weight: bold;">):</span>
+            <span style="color: #204a87; font-weight: bold;">return</span> <span style="color: #000000;">x</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #0000cf; font-weight: bold;">2</span>
+    
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">addTwo</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">3</span><span style="color: #000000; font-weight: bold;">))</span>  <span style="color: #8f5902; font-style: italic;"># This will print 5</span>
+    </pre></div>
+        <p>
+            Before we can dive further into functions there
+            are a few definations we need to understand:
+        </p>
+
+        <p>
+        Parameters: These are the input for the function, 
+        they appear in the brackets of the function 
+        definition. In the example above our only parameter
+         is x (you can have as many parameters as you want)
+        
+
+        </p>
+         
+        <p>- Arguments: These are what us (the programmer) passes to the function as input.
+             The appear in the function call. In the example above the only argument is 3.</p>
+
+
+        <h5>Breaking Down The Syntax:</h5>
+        <p> when we create a function
+             we first type the keyword "def" followed by a 
+             function name and brackets. Inside the brackets
+              we can list all of our parameters. All of the 
+              lines underneath the function that are indented
+              
+              are apart of the function and will be executed
+               when we call the function.</p>
+
+        <h3>Calling The Function:</h3>
+      <p>
+         to call the function we must 
+        type the function name followed by brackets. 
+        Inside the brackets we must list all of the 
+        arguments that the function requires. For example, 
+        if the function has two parameters we need 
+        2 arguments.
+      </p>
+      
+      <h3>Returning Values</h3>
+      <p>As you may have noticed in the above example our function 
+          addTwo uses the keyword "return". 
+          This indicates that at this line the function 
+          will terminate and return a certain value to 
+          wherever it was called from. However, not all 
+          functions need to return values. Some functions
+           may manipulate a list or print something to the 
+           screen rather than returning a value.
+            Some examples of different functions can be seen
+             below:</p>
+
+             <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;"><pre style="margin: 0; border: 0px; line-height: 125%;"><span style="color: #8f5902; font-style: italic;"># This function checks to see if every element in a list is a zero</span>
+                <span style="color: #8f5902; font-style: italic;"># It returns to us a True or False value depending on the list it's given</span>
+                <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">isZeros</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">li</span><span style="color: #000000; font-weight: bold;">):</span>    
+                    <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">element</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #000000;">li</span><span style="color: #000000; font-weight: bold;">:</span>
+                        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">element</span> <span style="color: #ce5c00; font-weight: bold;">!=</span> <span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">:</span>
+                            <span style="color: #204a87; font-weight: bold;">return</span> <span style="color: #3465a4;">False</span>
+                    <span style="color: #204a87; font-weight: bold;">return</span> <span style="color: #3465a4;">True</span>
+                
+                <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">isZeros</span><span style="color: #000000; font-weight: bold;">([</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">1</span><span style="color: #000000; font-weight: bold;">]))</span>  <span style="color: #8f5902; font-style: italic;"># This will print False</span>
+                
+                
+                <span style="color: #8f5902; font-style: italic;"># This function checks to see if every element in a list is a zero</span>
+                <span style="color: #8f5902; font-style: italic;"># It displays to the screen True or False</span>
+                <span style="color: #8f5902; font-style: italic;"># It does NOT return a value</span>
+                <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">isZeros</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #000000;">li</span><span style="color: #000000; font-weight: bold;">):</span>
+                    <span style="color: #000000;">check</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #3465a4;">True</span>    
+                    <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">element</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #000000;">li</span><span style="color: #000000; font-weight: bold;">:</span>
+                        <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">element</span> <span style="color: #ce5c00; font-weight: bold;">!=</span> <span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">:</span>
+                            <span style="color: #000000;">check</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #3465a4;">False</span>
+                            <span style="color: #204a87; font-weight: bold;">break</span>
+                    <span style="color: #204a87; font-weight: bold;">if</span> <span style="color: #000000;">check</span><span style="color: #000000; font-weight: bold;">:</span>
+                        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"True"</span><span style="color: #000000; font-weight: bold;">)</span>
+                    <span style="color: #204a87; font-weight: bold;">else</span><span style="color: #000000; font-weight: bold;">:</span>
+                        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"False"</span><span style="color: #000000; font-weight: bold;">)</span>
+                
+                <span style="color: #000000;">isZeros</span><span style="color: #000000; font-weight: bold;">([</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">,</span><span style="color: #0000cf; font-weight: bold;">0</span><span style="color: #000000; font-weight: bold;">])</span>  <span style="color: #8f5902; font-style: italic;"># Calling this will result in True being printed to the screen</span>
+                </pre></div><br>
+       
+
+       <h5>Some More Examples</h5>
+    
+       <p>Note: Functions are meant to be re-used and thus
+            can be used as many times as you would like. 
+            If you ever find yourself repeating code think
+             about putting it into a function and calling 
+             that function in place of the repeated code.
+            </p>
+
+      <h5>Problem: <p>we want to ask a set of questions 5
+          times.
+          Below i will show you three ways of solving this Problem
+          and then we will compare their efficiency and elegance .
+
+      </p></h5><br>
+
+    <h5>solution 1:</h5>
+    <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">age</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your age: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type where you are from: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Your name is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"you are"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">years</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"old and you are from"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">'.'</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">age</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your age: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type where you are from: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Your name is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"you are"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">years</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"old and you are from"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">'.'</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">age</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your age: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type where you are from: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Your name is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"you are"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">years</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"old and you are from"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">'.'</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">age</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your age: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type where you are from: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Your name is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"you are"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">years</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"old and you are from"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">'.'</span><span style="color: #000000; font-weight: bold;">)</span>
+        
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">age</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your age: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type where you are from: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Your name is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"you are"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">years</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"old and you are from"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">'.'</span><span style="color: #000000; font-weight: bold;">)</span>
+        </pre></div><br>
+
+     <h5>solution 2:</h5>
+     <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">():</span>
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">age</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your age: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type where you are from: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Your name is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"you are"</span><span style="color: #000000; font-weight: bold;">,</span> age<span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"old and you are from"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">'.'</span><span style="color: #000000; font-weight: bold;">)</span>
+    
+    <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">()</span> <span style="color: #8f5902; font-style: italic;">#1</span>
+    <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">()</span> <span style="color: #8f5902; font-style: italic;">#2</span>
+    <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">()</span> <span style="color: #8f5902; font-style: italic;">#3</span>
+    <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">()</span> <span style="color: #8f5902; font-style: italic;">#4</span>
+    <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">()</span> <span style="color: #8f5902; font-style: italic;">#5</span>
+    </pre></div><br>
+
+
+     <h5>solution 3:</h5>
+
+     <div style="background: #f8f8f8; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+        <pre style="margin: 0; border: 0px; line-height: 125%;">
+        <span style="color: #204a87; font-weight: bold;">def</span> <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">():</span>
+        <span style="color: #000000;">name</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your name: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">age</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type your age: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">=</span> <span style="color: #204a87;">input</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Please type where you are from: "</span><span style="color: #000000; font-weight: bold;">)</span>
+        <span style="color: #204a87; font-weight: bold;">print</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #4e9a06;">"Your name is"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">name</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"you are"</span><span style="color: #000000; font-weight: bold;">,</span> age<span style="color: #000000; font-weight: bold;">,</span> <span style="color: #4e9a06;">"old and you are from"</span><span style="color: #000000; font-weight: bold;">,</span> <span style="color: #000000;">country</span> <span style="color: #ce5c00; font-weight: bold;">+</span> <span style="color: #4e9a06;">'.'</span><span style="color: #000000; font-weight: bold;">)</span>
+    
+    <span style="color: #204a87; font-weight: bold;">for</span> <span style="color: #000000;">i</span> <span style="color: #204a87; font-weight: bold;">in</span> <span style="color: #204a87;">range</span><span style="color: #000000; font-weight: bold;">(</span><span style="color: #0000cf; font-weight: bold;">5</span><span style="color: #000000; font-weight: bold;">):</span>
+        <span style="color: #000000;">askQuestions</span><span style="color: #000000; font-weight: bold;">()</span>  <span style="color: #8f5902; font-style: italic;"># This will call the function 5 times</span>
+    </pre></div>
+    As we can see solution 2 and 3 are much more efficient and elegant. Not only do they use less lines of code but they are easier to read and make our program look cleaner.
+
+
+
+
+    <div class="mt-5 mb-5">
+        <a href="/lesson/Read-Files"><button type="button" class="btn list-group-item-color mb-5 mt-5 " style="width: 100%;">Next Lesson</button></a>
+        
+    </div>
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

@@ -10,11 +10,29 @@
 
 } */
 /* (((((((((((((((FOR THE NAV BAR STYLING ))))))))))))))))))))))*/
-.myform-control {
+.form-control {
     display: block;
     width: 100%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: transparent !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-secondary {
+    text-align: center;
+    display: block;
+    width: 150px;
+    height: calc(1.5em + .75rem + 2px);
+    /* padding: .37rem; */
+    margin-right:10px;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -32,22 +50,25 @@
 } */
 
 
-.bg-dar {
+.bg-dark {
     background-color: #37045F !important;
 }
 
 /*(((((((((((((((((((((((((((for the showcase image)))))))))))))))))))))))  */
 
 .showcase img{
-    width: 100% !important;
+    width: 100% ;
     margin-left: -10px;
+    margin-top: 3px;
 }
+
+
 
 
 /* (((((((((((((((main header section style)))))))))))))))))))))) */
-.breadcrumb{
+/* .breadcrumb{
     background-color: #37045F;
-}
+} */
 
 
 
@@ -79,7 +100,42 @@
 
 /* this is what i use to remove the border lines of any boostrap card */
 .mycard{
+    border: 40px solid rgba(158, 49, 49, 0.125) !important;
+    
+    
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #37045F ;
+    content: "";
+}
+
+.mybreadcrumb-2{
+    border: 4px solid rgba(158, 49, 49, 0.125) !important;
+    border-color: #37045F !important;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.mybreadcrumb-2 li a {
+    text-decoration: none;
+    color: blueviolet;
+    padding: 2px;
+}
+
+.mybreadcrumb{
     border: 0px solid rgba(158, 49, 49, 0.125) !important;
+    margin-bottom: -15px;
+    margin-top: 10px;
+    background-color: #37045F;
+    height: 2px;
+    
+
+    border-radius: 10px;
+    text-align: center;
+    
 }
 
 /* .mycontainer{
@@ -94,12 +150,37 @@
     background-color: #37045F;
     color: #6ABBFF;
     width: 100%!important;
+    border-radius: 10px;
 }
 
+.breadcrumb .small-btn{
+    background-color: transparent;
+    color: white;
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px;
+    text-align: center;
+    border: solid 1px;
+    border-color: #37045F;
+    box-shadow: brown;
+    
+}
+.small-btn {
+    background-color: #37045F;
+    color: white;
+    border-radius: 8px;
+
+}
 .image-resize{
     width: auto;
     height: 200px;
 }
+
+.image-resize{
+    width: auto;
+    height: 800px;
+}
+
 
 /* for the main banner */
 
@@ -118,4 +199,55 @@
     
 }
 
-/* for Django styling */
+
+/* featured post styling */
+
+.featuredpost-card img {
+   width:auto;
+   padding: 0 !important;
+   margin: 0 !important;
+
+   
+   
+}
+
+.featuredpost-card{
+    width:auto;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* position: fixed;  Sit on top of the page content  */
+    /* display: none; Hidden by default */
+    /* width: 100%; Full width (cover the whole page) */
+    /* height: 100%; Full height (cover the whole page) */ 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; 
+    cursor: pointer; 
+ }
+
+ /* for messages styling */
+
+ /* Styling for error messages */
+ 
+.messages.error {
+    background-color: red !important;
+    color:'white'
+}
+
+/* Styling for success messages */
+.messages .success {
+    background-color: green !important;
+
+    color: green;
+}
+
+/* Styling for other messages */
+.messages .info {
+    background-color: blue !important;
+
+    color: blue;
+}

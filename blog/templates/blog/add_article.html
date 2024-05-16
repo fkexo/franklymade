@@ -1,0 +1,36 @@
+{% extends 'franklymade/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div>
+        <div class="text-center mt-5 mb5 mybtn text-white"><h4>{{user.username}} - Add article</h4></div>
+        <var>
+
+        </var>
+        
+        {% if messages %}
+        {% for message in messages %}
+        <ul class="messages badge badge-primary">
+            <li {% if message.tag %} class="{{message.tag}}{% endif %}">{{message}}</li>
+
+        </ul>
+        {% endfor %}
+
+        {% endif %}
+        <form method="POST"  >
+            {% csrf_token %}
+
+            {{form|crispy}}
+
+        <button type="submit" class="mybtn" >submit</button>
+        <var>
+        </var>
+        </form>
+        <var>
+
+        </var>
+</div>
+
+{% endblock %}

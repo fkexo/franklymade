@@ -31,14 +31,21 @@ def register_user(request):
         #     jobadmin = JobAdmin(user=user)
         #     jobadmin.save()
         #     print(dir(JobAdmin))
-        
+            messages.success(request, " Successfully signed up ")
             return redirect('login')
+            
         else:
-            messages.error(request, 'unsuccessful signup check your data ')
+            messages.error(request, 'unsuccessful Signup check your data ')
+           
     
-
-    context = {'form':form}
+    context = {"form":form,
+               'messages':messages.get_messages(request),
+               }
+    
     return render(request, 'accounts/register.html', context)
+            
+
+    
 
 
 def login_user(request):
@@ -49,17 +56,21 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
+            
             messages.success(request, 'Successfully loged in ')
-            return redirect('python_intro')
+            return redirect('tech_home')
         else:
-            messages.error(request, 'user not found')    
-    return render(request, 'accounts/login.html')
+            messages.error(request, 'user not found')
+            
+    
+    context = {'messages':messages.get_messages(request)}  
+    return render(request, 'accounts/login.html', context)
 
 
 
 def logout_user(request):
     logout(request)
-    return redirect('python_intro')
+    return redirect('tech_home')
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['jobadmin', 'blogadmin'])
@@ -81,3 +92,6 @@ def dashbaord(request):
 
 
 
+def contributePost(request):
+
+    return render(request, 'accounts/contribute.html')

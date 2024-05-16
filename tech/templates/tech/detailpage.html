@@ -1,0 +1,154 @@
+{% extends 'franklymade/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+  <!-- home header banner -->
+  <header class=" text-center">
+    <div class="showcase">
+      <img src="{% static  'franklymade/images/techbanner.png' %}" alt="not found">
+      <div style=" margin-top: 10px; width:px;" class="card-img-overlay">
+        <h5 class="card-title"></h5>
+        <p class="card-text"></p>
+        <p class="card-text"><small></small></p>
+      </div>
+    </div>
+  </header>
+
+
+    <!-- this pre is used to add space -->
+    <pre>
+      
+    </pre>
+
+
+    <!-- breadcrumb -->
+    
+    <!-- <div> 
+        <nav style="" aria-label="breadcrumb">
+          <ol class=" mybreadcrumb breadcrumb">
+            
+          </ol>
+        </nav>
+        <nav style="" aria-label="breadcrumb">
+          <ol class=" text-center mybreadcrumb-2 breadcrumb">
+            <li class=" small-btn breadcrumb-item"><a href="#">Web development</a></li>
+            <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Block chain technology</a></li>
+            <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Full stack web development</a></li>
+            <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Smart contract</a></li>
+          </ol>
+        </nav>
+    </div>
+   -->
+
+      <pre>
+                
+      </pre>
+      <!-- the tech new banner -->
+    
+      <div class="row">
+        
+          <!-- the carousel -->
+        <div class="col-sm-8 mb-3 mb-sm-0">
+            <div style=" margin-bottom: -3px; background-color: #a794b9b8;" class="card-body">
+                <h6>{{news_detail.title}}</h6>
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              </div>
+            <div class="card" style="width: auto;">
+                <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                <div style="background-color: #a794b9b8;" class="card-body">
+                  <h5>featured lesson</h5>
+                  <p class="card-text">{{news_detail.content}}</p>
+                    
+                </div>
+                <div style="width: auto;">
+                    <span>source:<span><blockquote >Google News</blockquote></span> <span> <a href="{{news_detail.news_source}}">Learn more : </a>
+                </div>
+            </div>
+        </div>
+     
+        <!-- this is the side bar -->
+        <!-- this will be an adds card for now -->
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div style="margin-bottom: -3px; background-color: #a794b9b8;" class="card-body">
+                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing e!</h>
+                      </div>
+                    <div class="card" style="width: auto;">
+                        <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                        
+                    </div>
+
+                </div>
+                
+
+                </div>
+
+
+            </div>
+          
+        </div>
+      </div>
+
+      <pre>
+
+      </pre>
+
+      <!-- featured posts  -->
+        <div class="row">
+                
+                <!-- the carousel -->
+
+            <div class="col-sm-4">
+                <div class="card" style="width: auto;">
+                    <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                    <div style="background-color: #a794b9b8;" class="card-body">
+                        <h5>featured lesson</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    
+                    <button style="margin-top: -3px;" class="small-btn">
+                        <a class="nav-link" href="{% url 'create_course'%}">Learn more</a>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card" style="width: auto;">
+                <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                <div style="background-color: #a794b9b8;" class="card-body">
+                    <h5>featured lesson</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <button style="margin-top: -3px;" class="small-btn">
+                    <a class="nav-link" href="{% url 'create_course'%}">learn more</a>
+                </button>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card" style="width: auto;">
+                <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                <div style="background-color: #a794b9b8;" class="card-body">
+                    <h5>featured lesson</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <button style="margin-top: -3px;" class="small-btn">
+                    <a class="nav-link" href="{% url 'create_course'%}">Learn more</a>
+                </button>
+                </div>
+            </div>
+        </div>
+     <!-- caurosel tech news section-->
+     
+      <pre>
+      </pre>
+      
+
+  
+
+</div>
+{% endblock %}
+ 

@@ -1,0 +1,78 @@
+{% extends 'franklymade/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+  <!-- Navigation -->
+  
+  
+  <!-- the showcase image -->
+  <header>
+    <div class="showcase">
+      <img src="{% static  'franklymade/images/Frame 1.png' %}" alt="not found">
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+    <div class="containe">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Python Tutorial
+        <small></small>
+        </h1>
+        <h5> </h5>
+        <h5></h5>
+
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Latest Tech News </li> <h6 class="breadcrumb-item active" > coming soon...</h6>
+        </ol>
+
+          <div class="row row-controler">
+
+            
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+                
+
+                <!-- Search Widget -->
+                <!-- {% include 'franklymade/included/searchbar.html' %} -->
+                <!-- Categories Widget -->
+                {% include 'franklymade/included/table_of_content.html' %}
+                
+            </div>
+        
+
+
+            <!-- Blog Entries Column -->
+          
+              <!-- {% if course  %}
+              
+            <div class="col-md-8 mb-5 " >  
+
+                <div class="card bg-dark text-white">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Lesson {{ course.id }} : {{ course.title }}</h5>
+                   
+                    <p class="card-text"></p>
+                    <p class="card-text"></p>
+                  </div>
+                </div>
+              
+            </div>
+            {% endif %} -->
+            <div class="col-md-8 mb-5 " >   
+              {% block course_content %}
+              {% endblock %}
+            </div>
+
+            <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+{% endblock %}

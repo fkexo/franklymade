@@ -1,0 +1,26 @@
+{% extends 'franklymade/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div>
+        <div class="text-center mt-5 mb5 mybtn text-white"><h4>{{ user.username }} - Add tech news</h4></div>
+        <var>
+
+
+        </var>
+        <!-- {{ form.media }} -->
+
+        <form method="POST" >
+            {% csrf_token %}
+
+            {{form|crispy}}
+
+        <button class="mybtn">submit</button>
+        </form>
+</div>
+<var>
+
+
+</var>
+{% endblock %}

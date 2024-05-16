@@ -1,0 +1,29 @@
+{% extends 'franklymade/tutorial_base.html' %}
+
+
+{% block course_content %}
+    <br>
+   <h3>{{lesson.title}}</h3>
+    
+    <div style=" margin-bottom: -3px; background-color: #a794b9b8;" class="card-body">
+        <p>{{lesson.lesson_content|safe}}</p>
+    </div>
+
+
+
+    <div class="mt-5 mb-5">
+        <a href="/lesson/Read-Files"><button type="button" class="btn list-group-item-color mb-5 mt-5 " style="width: 100%;">Next Lesson</button></a>
+        
+    </div>
+
+
+
+
+
+      </div>
+
+
+
+</div>
+{% endblock %}
+<!-- Blog entry ends  -->

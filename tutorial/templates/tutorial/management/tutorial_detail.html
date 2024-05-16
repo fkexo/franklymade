@@ -1,0 +1,80 @@
+{% extends 'franklymade/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Welcome To FranklyMade 
+      <small>code arena</small>
+    </h1>
+     <h5>Get started learning how to code with python </h5>
+     <h5>Learn web development using django a popular python frame work</h5>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Home</a>/ 
+      </li>
+     <a href="{% url 'index'%}"> <li class="breadcrumb-item active">Latest in Tech</li></a>
+    </ol>
+
+  <div class="row row-controler">
+
+     
+      <!-- Sidebar Widgets Column -->
+    <div class="col-sm-4">
+      <div class="text-center mybtn " style="margin-bottom: -17px; border-radius: 2px;">
+      <p>category</p>
+    </div>
+
+        <!-- Categories Widget -->
+        {% for tutorial in category_list %}
+        <div class="list-group">
+          <a href="{% url 'tutorial' tutorial.id %}" class="list-group-item list-group-item-action">{{tutorial.cat_name}}</a>
+        </div>
+        {% endfor %}
+  
+        <var>
+          
+        </var>
+
+    </div>
+ 
+
+
+      <!-- Blog Entries Column -->
+        <div class="col-sm-8 mb-3 mb-sm-0"> 
+          <div class="row">
+
+            {% for lesson in lesson_list %}
+            <div class="col-sm-4">
+              <div class="card" style=" padding:0; width: auto;">
+                
+                <a href="{% url 'lesson' lesson.slug %}">
+                  <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                  <div style=" padding:4px; background-color: #a794b9b8;" class="card-body">
+                    <h6 class="text-white ">{{lesson.title}}</h6>
+                </a>
+                </div>
+                
+              </div>
+            </div>
+            {% endfor %}
+            
+          </div>
+          
+        </div> 
+       
+             
+     <!-- the three cards from bootstrap -->
+      
+      </div>
+
+
+  </div>
+    <!-- /.row -->
+
+</div>
+{% endblock %}
+ 

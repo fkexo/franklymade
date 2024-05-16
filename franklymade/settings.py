@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', 'False') == "False"
 
 
-ALLOWED_HOSTS = ['localhost', 'franklymade-nncs.onrender.com', 'http://127.0.0.1:8000', 'localhost/admin']
+ALLOWED_HOSTS = ['franklymade-nncs.onrender.com', 'localhost',  'http://127.0.0.1:8000']
 
 
 # Application definition
@@ -48,6 +48,12 @@ INSTALLED_APPS = [
     'blog',
     'tutorial',
     'portinfo',
+    
+    'ckeditor',
+    
+    'crispy_forms',
+    'crispy_bootstrap5',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,11 +62,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'trumbowyg',
 
-    # 'tinymce',
-    'crispy_forms',
-    'crispy_bootstrap5',
 ]
 
+
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -79,6 +84,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# i added this message storage for the messages
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+# MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
 ROOT_URLCONF = 'franklymade.urls'
 
 TEMPLATES = [
@@ -88,7 +97,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'franklymade/templates'),
             os.path.join(BASE_DIR, 'portinfo/templates'),
             os.path.join(BASE_DIR, 'portinfo/templates/portinfo'),
-            
+            os.path.join(BASE_DIR, 'tech/templates'),
            
         ],
         'APP_DIRS': True,
@@ -109,17 +118,46 @@ WSGI_APPLICATION = 'franklymade.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+USER = os.getenv('USER')
+PASSWORD = os.getenv('PASSWORD')
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'website-postgresql-franklymade',
+    'USER': USER,
+    'PASSWORD': PASSWORD, # Replace with the actual password
+    'HOST': 'dpg-cp2eom21hbls739g011g-a',
+    'PORT': '5432',
     }
+
 }
 
+DATABASE_URL = os.getenv('DATABASE_URL ')
 
+# this will enable database update from development environmet
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage", 
+    },
+}
 # DATABASES = {
 #     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
 #     }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -139,6 +177,57 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+# this will log bug to console even when debug is set to False.
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    # 'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[{server_time}] {message}',
+            'style': '{',
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            #'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+        },
+        'django.server': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            #'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'mail_admins'],
+            'level': 'INFO',
+        },
+        'django.server': {
+            'handlers': ['django.server'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -176,6 +265,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
 # lets tell django where to look for static files in our project folder
 STATICFILES_DIRS =[ os.path.join(
     BASE_DIR, 'franklymade/static',
@@ -183,7 +273,7 @@ STATICFILES_DIRS =[ os.path.join(
 ]
 
 
-# for the tinymce
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -195,9 +285,9 @@ STATICFILES_DIRS =[ os.path.join(
 # }
 
 
+
 # db_from_env = dj_database_url.config()
 # DATABASES['default'].update(db_from_env)
-
 
 
 

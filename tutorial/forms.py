@@ -2,38 +2,30 @@ from django import forms
 from django.db.models import fields
 from django.forms import TextInput, Textarea
 from crispy_forms.helper import FormHelper
-from .models import PythonCourse, Course
+from .models import PythonCourse, Lesson
 
 
 
 
 
-
-class TinyMCEWidget(Textarea):
-    def __init__(self, attrs=None):
-        if attrs is None:
-            attrs = {}
-        attrs['class'] = 'tinymce'
-        super().__init__(attrs=attrs)
-
-class MyForm(forms.Form):
-    description= forms.CharField(widget=TinyMCEWidget)
+# class MyForm(forms.Form):
+#     description= forms.CharField(widget=TinyMCEWidget)
 
 
 
-class CourseForm(forms.ModelForm):
-    class Meta:
-        model = Course
+# class LessonForm(forms.ModelForm):
+#     class Meta:
+#         model = Lesson
 
-        fields = ('title','slug', 'description')
+#         fields = ('title', 'slug', 'lesson_category', 'course', 'lesson_content')
 
 
-class PostCourseForm(forms.ModelForm):
+# class PostCourseForm(forms.ModelForm):
     
 
-    class Meta:
-        model = PythonCourse
-        # select the field we need in the create form
+#     class Meta:
+#         model = PythonCourse
+#         # select the field we need in the create form
 
-        fields = ('title', 'slug', 'description')
+#         fields = ('title', 'slug', 'description')
        

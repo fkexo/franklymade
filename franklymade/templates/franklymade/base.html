@@ -22,19 +22,18 @@
   <link href="{% static 'franklymade/css/modern-business.css' %}" rel="stylesheet">
 
    <link href="{% static 'franklymade/css/basestyle.css' %}" rel="stylesheet"> 
+   <link href="{% static 'franklymade/css/carousel_css.css' %}" rel="stylesheet"> 
+
+
+  <!-- boostrap cdn  i included this for the drop downs and the poppers-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
 
    <!-- Place the first <script> tag in your HTML's <head> -->
 <!-- <script src="https://cdn.tiny.cloud/1/b0mh6y2zj4en80w9lk3cc7eptf9plj2v3orc6oj5u2o00wi0/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
 <script src="https://cdn.tiny.cloud/1/a98pw8k8dm6tpocfj5lrhu1e9v264so1mzzq1894ybbk8ilu/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-<script>
-  tinymce.init({
-      selector: 'textarea',
-      plugins: 'autolink lists link image charmap print preview anchor',
-      toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
-  });
-  </script>
 <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
 
 
@@ -47,14 +46,19 @@
        {% include 'franklymade/included/navbar.html' %}
   
   <!-- the showcase image -->
-  <header class="container text-center">
-    <div class="showcase">
-      <img   class="showcase  " src="{% static  'franklymade/images/Frame 1.png' %}" alt="not found">
-    </div>
-  </header>
+  <!-- header position -->
+  
 
 
   <!-- Page Content -->
+  {% if err_message %}
+  <div class="text-center">
+   
+    <p class="">{{err_message.message}}</p>
+    
+  </div>
+  {% endif %}
+
   <div class="container">
     {% block content %}
     {% endblock %}
@@ -66,15 +70,25 @@
     
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; FranklyMade 2019 - 2023</p>
+      <p class="m-0 text-center text-white">Copyright &copy; FranklyMade 2024</p>
+
+      <div class="text-white">
+        {% if user.is_authenticated %}
+        signed in as <h4><span>{{user.username}}</span></h4>
+        {% endif %}
+        
+        <h6><a href="{% url 'contribute' %}">Contribute</a></h6></h6>
+      </div>
     </div>
     <!-- /.container -->
+
   </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'franklymade/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'franklymade/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
+  <script src="{% static 'franklymade/js/carousel_js.js' %}"> </script>
+  
 </body>
 
 </html>

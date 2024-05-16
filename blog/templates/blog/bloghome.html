@@ -1,0 +1,141 @@
+{% extends 'franklymade/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- the blogs -->
+<div class="container">
+  <!-- home header banner -->
+    <header class=" text-center">
+      <div class="showcase">
+        <img src="{% static  'franklymade/images/Banner.png' %}" alt="not found">
+        <div style=" margin-top: 10px;" class="card-img-overlay">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small></small></p>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- this pre is used to add space -->
+    <pre>
+      
+    </pre>
+
+
+    <!-- breadcrumb -->
+    
+    <div> 
+      <nav style="" aria-label="breadcrumb">
+        <ol class=" mybreadcrumb breadcrumb">
+          
+        </ol>
+      </nav>
+      <nav style="" aria-label="breadcrumb">
+        <ol class=" text-center mybreadcrumb-2 breadcrumb">
+          <li class=" small-btn breadcrumb-item"><a href="#">Web development</a></li>
+          <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Block chain technology</a></li>
+          <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Full stack web development</a></li>
+          <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Smart contract</a></li>
+        </ol>
+      </nav>
+    </div>
+  
+    
+      
+       
+      <pre>
+          
+        
+      </pre>
+      <!-- the tech new banner -->
+    
+      <div class="row">
+        
+          <!-- the carousel -->
+        <div class="col-sm-8 mb-3 mb-sm-0">
+          {% include 'franklymade/included/banner_carousel.html' %}
+         
+        </div>
+     
+        <div class="col-sm-4">
+          <div class="card" style="width: auto;">
+            <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+            <div style="background-color: #a794b9b8;" class="card-body">
+              <h5>featured lesson</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <button style="margin-top: -3px;" class="small-btn">
+              <a class="nav-link" href="{% url 'create_course'%}">Learn more</a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <pre>
+
+      </pre>
+     <!-- Article list section-->
+     
+     
+      <div class="row">
+        
+        <div style="margin-bottom: 5px; margin-top: 5px;" class="col-sm-4 mb-5 mb-sm-0">
+       
+          <div class="card" style="width: auto;">
+            <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+            <div style="background-color: #a794b9b8;" class="card-body">
+              <h5>featured lesson</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <button style="margin-top: -3px;" class="small-btn">
+              <a class="nav-link" href="{% url 'create_course'%}">Learn more</a>
+            </button>
+          
+          </div>
+        </div>
+      
+          <var>
+
+            
+          </var>
+
+  
+
+      </div>
+
+
+
+
+  
+  <!-- /.row -->
+
+  <!-- Pagination -->
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+    </li>
+  </ul>
+
+</div>
+<!-- /.container -->
+{% endblock %}
+
