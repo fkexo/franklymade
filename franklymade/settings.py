@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', 'from_env') == "False"
+DEBUG = os.environ.get('DEBUG', 'from_env') == "True"
 
 print(DEBUG)
 ALLOWED_HOSTS = ['franklymade-nncs.onrender.com', 'localhost',  'http://127.0.0.1:8000']
