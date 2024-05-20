@@ -3,7 +3,7 @@
 
 <div class="col-sm-4">
     <div class="card" style="width: auto;">
-      <img class="card-img-top" src="{{featured_lesson.image.url}}" alt="Card image cap">
+      <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
       <div style="background-color: #a794b9b8;" class="card-body">
         <h5>{{featured_lesson.title}}</h5>
         <p class="card-text">{{featured_lesson.get_shortened_lesson_content|safe}}</p>

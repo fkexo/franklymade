@@ -64,7 +64,7 @@ class CourseSeries(models.Model):
         return reverse('course_detail', kwargs={"id":self.id})
 
     def short_description_text(self):
-        return self.description[:100]+ "..."
+        return self.description[:250]+ "..."
     
 
     
