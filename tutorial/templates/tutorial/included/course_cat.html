@@ -1,0 +1,8 @@
+
+<!-- category side bar -->
+
+{% for course_series in category_list %}
+<div class="list-group">
+    <a href="{% url 'course_series_list' course_series.id %}" class="list-group-item list-group-item-action">{{course_series.cat_name}}</a>
+</div>
+{% endfor %}

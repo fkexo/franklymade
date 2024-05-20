@@ -56,35 +56,22 @@
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
               </div>
             <div class="card" style="width: auto;">
-                <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                <img class="card-img-top" src="{{news_detail.image.url}}" alt="Card image cap">
                 <div style="background-color: #a794b9b8;" class="card-body">
-                  <h5>featured lesson</h5>
-                  <p class="card-text">{{news_detail.content}}</p>
+                  <!-- <h5>featured lesson</h5> -->
+                  <p class="card-text">{{news_detail.content|safe}}</p>
                     
                 </div>
                 <div style="width: auto;">
-                    <span>source:<span><blockquote >Google News</blockquote></span> <span> <a href="{{news_detail.news_source}}">Learn more : </a>
+                    <span>source:<span></span> <span> <a href="{{news_detail.news_source}}">Learn more : </a>
                 </div>
             </div>
         </div>
      
         <!-- this is the side bar -->
         <!-- this will be an adds card for now -->
-        <div class="col-sm-4">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div style="margin-bottom: -3px; background-color: #a794b9b8;" class="card-body">
-                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing e!</h>
-                      </div>
-                    <div class="card" style="width: auto;">
-                        <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
-                        
-                    </div>
-
-                </div>
-                
-
-                </div>
+        <!-- {% include 'tech/included/featured_side_bar.html' %} -->
+        
 
 
             </div>
@@ -100,46 +87,23 @@
         <div class="row">
                 
                 <!-- the carousel -->
-
+          {% for news_item in featured_news %}
             <div class="col-sm-4">
                 <div class="card" style="width: auto;">
-                    <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                    <img class="card-img-top" src="{{news_item.image.url}}" alt="Card image cap">
                     <div style="background-color: #a794b9b8;" class="card-body">
-                        <h5>featured lesson</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5>{{news_item.title}}</h5>
+                        <p class="card-text">{{news_item.shortened_news_content|safe}}</p>
                     </div>
                     
                     <button style="margin-top: -3px;" class="small-btn">
-                        <a class="nav-link" href="{% url 'create_course'%}">Learn more</a>
+                        <a class="nav-link" href="{% url 'detail_page' news_item.slug %}">Learn more</a>
                     </button>
                 </div>
             </div>
+            {% endfor %}
 
-            <div class="col-sm-4">
-                <div class="card" style="width: auto;">
-                <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
-                <div style="background-color: #a794b9b8;" class="card-body">
-                    <h5>featured lesson</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <button style="margin-top: -3px;" class="small-btn">
-                    <a class="nav-link" href="{% url 'create_course'%}">learn more</a>
-                </button>
-                </div>
-            </div>
 
-            <div class="col-sm-4">
-                <div class="card" style="width: auto;">
-                <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
-                <div style="background-color: #a794b9b8;" class="card-body">
-                    <h5>featured lesson</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <button style="margin-top: -3px;" class="small-btn">
-                    <a class="nav-link" href="{% url 'create_course'%}">Learn more</a>
-                </button>
-                </div>
-            </div>
         </div>
      <!-- caurosel tech news section-->
      

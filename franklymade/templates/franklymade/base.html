@@ -36,6 +36,12 @@
 
 <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
 
+  <!-- for the code editor -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/python/python.min.js"></script>
+
+
 
 
 </head>
@@ -74,10 +80,10 @@
 
       <div class="text-white">
         {% if user.is_authenticated %}
-        signed in as <h4><span>{{user.username}}</span></h4>
+        signed in as <p><span>{{user.username}}</span></p>
         {% endif %}
         
-        <h6><a href="{% url 'contribute' %}">Contribute</a></h6></h6>
+        <!-- <h6><a href="{% url 'contribute' %}">Contribute</a></h6></h6> -->
       </div>
     </div>
     <!-- /.container -->

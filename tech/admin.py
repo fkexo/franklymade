@@ -3,11 +3,17 @@ from .models import News, NewsCategory
 from django import forms
 
 
+from ckeditor.widgets import CKEditorWidget
+from django.db import models
 
 
 
 
 
+class NewsFormAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget},
+    }
 
 
 class NewsForm(forms.ModelForm):
@@ -18,5 +24,5 @@ class NewsForm(forms.ModelForm):
         fields = ['content',]
 
 
-admin.site.register(News)
+admin.site.register(News, NewsFormAdmin)
 admin.site.register(NewsCategory)

@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container">
   <!-- home header banner -->
-  <header class=" text-center">
+  <!-- <header class=" text-center">
     <div class="showcase">
       <img src="{% static  'franklymade/images/techbanner.png' %}" alt="not found">
       <div style=" margin-top: 10px; " class="card-img-overlay">
@@ -14,7 +14,7 @@
         <p class="card-text"><small></small></p>
       </div>
     </div>
-  </header>
+  </header> -->
 
 
     <!-- this pre is used to add space -->
@@ -55,18 +55,9 @@
          
         </div>
      
-        <div class="col-sm-4">
-          <div class="card" style="width: auto;">
-            <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
-            <div style="background-color: #a794b9b8;" class="card-body">
-              <h5>featured lesson</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <button style="margin-top: -3px;" class="small-btn">
-              <a class="nav-link" href="">Learn more</a>
-          </button>
-          </div>
-        </div>
+        <!-- this is where the feature lesson is -->
+        {% include 'tech/included/featured_side_bar.html' %}
+        
       </div>
 
       <pre>
@@ -80,13 +71,13 @@
             {% for news in news_list %}
               <div class="col-sm-4">
                 <div class="card" style="width: auto;">
-                  <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                  <img class="card-img-top" src="{{news.image.url}}" alt="Card image cap">
                   <div style="background-color: #a794b9b8;" class="card-body">
                     <h5>{{news.title}}</h5>
-                    <p class="card-text">{{ news.shortened_news_content}}</p>
+                    <p class="card-text">{{ news.shortened_news_content|safe}}</p>
                   </div>
                   <button style="margin-top: -3px;" class="small-btn">
-                    <a class="nav-link" href="{% url 'detail_page' news.slug%}">Learn more</a>
+                    <a class="nav-link" href="{% url 'detail_page' news.slug %}">Learn more</a>
                   </button>
                 </div>
               </div>

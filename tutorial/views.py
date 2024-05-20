@@ -9,7 +9,7 @@ from django.db import IntegrityError
 from django.contrib import messages
 
 from .models import Author,\
-Lesson, Category
+Lesson, Category, CourseSeries
 
 
 
@@ -23,18 +23,85 @@ def get_author(user):
 
 # for the franklymade homepage
 def tutorial_home(request):
+    
+
     lesson_list = Lesson.objects.all()
     category_list = Category.objects.all()
+    # category_list = Category.objects.filter(lessons__isnull=False).distinct()
     context = {'lesson_list':lesson_list,
-               "category":category_list,
+               "category_list":category_list,
+               
                }
     return render(request, 'tutorial/management/tutorial_home.html', context)
 
+
+
+def course_series(request, id):
+    TITLE = "Courses"
+    category_list = Category.objects.all()
+    category = get_object_or_404(Category, id=id)
+    courseseries = CourseSeries.objects.filter(category=category)
+    context =  {
+        'title': TITLE,
+        'category_list': category_list,
+        'courseseries': courseseries,
+        'category': category
+    }
+    return render(request, 'tutorial/management/course_list.html', context)
+
+def course_detail(request, id):
+    TITLE = "Introduction"
+
+    
+    course = get_object_or_404(CourseSeries, id=id)
+    
+    
+    lesson_list = Lesson.objects.all()
+
+
+    context = {
+                "table_of_content":lesson_list,
+               "course":course,
+               "TITLE":TITLE,
+               "lesson_list":lesson_list
+               }
+    # this is the course introduction page
+    return render(request, 'tutorial/management/course_detail.html', context)
+
+def my_lesson_list(request):
+    TITLE = "Lesson List"
+    lesson_list = Lesson.objects.all()
+   
+    context = {
+        
+        'lesson_list':lesson_list,
+        "table_of_content":lesson_list,
+        
+        "TITLE ":TITLE 
+        }
+    return render(request, 'tutorial/management/lesson_list.html', context)
+
+
 def lessonContent(request, slug):
+    TITLE = "Lesson Detail"
+
     lesson = get_object_or_404(Lesson, slug=slug)
+    lesson_list = Lesson.objects.order_by()
+
+    # for the next lesson button
+    if lesson.next_lesson:
+        next_lesson_url = lesson.next_lesson.get_absolute_url()
+    else:
+        return redirect('tutorial_home')
+    
+
     
     context={
         'lesson':lesson,
+        "next_lesson_url": next_lesson_url,
+        'lesson_list':lesson_list,
+        "table_of_content":lesson_list,
+        "TITLE":TITLE
         }
 
     return render(request, 'tutorial/management/lesson.html', context)

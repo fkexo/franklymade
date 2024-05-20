@@ -1,0 +1,12 @@
+
+
+    <label for="code-editor">Code Editor</label>
+    <textarea id="code-editor"></textarea>
+
+    <script>
+      const editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+        mode: 'python',
+        theme: 'material',
+        lineNumbers: true,
+      });
+    </script>

@@ -1,0 +1,29 @@
+{% extends 'franklymade/tutorial_base.html' %}
+{% load static %}
+
+{% block course_content %}
+
+      <!-- Blog Entries Column -->
+
+    <h3>Featured lessons</h3>
+    <div class="row">
+
+    {% for lesson in lesson_list %}
+    <div class="col-sm-4">
+        <div class="card" style="padding: 0; width: auto;">
+
+            <a href="{% url 'lesson' lesson.slug %}">
+                <img class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                <div style="padding: 4px; background-color: #a794b9b8;" class="card-body">
+                    <h6 class="text-white">{{lesson.title}}</h6>
+                </div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+<!-- /.row -->
+{% endblock %}

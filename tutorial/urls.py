@@ -4,7 +4,13 @@ from . import views
 #  title = post.course_category
 urlpatterns = [
     # page for all the course categories
-    path('course', views.tutorial_home, name='course_home'), 
+    
+    path('Learn-to-code', views.tutorial_home, name='tutorial_home'), 
+    path('<id>/courses', views.course_series, name='course_series_list'), 
+    path('course<id>/', views.course_detail, name='course_detail'), 
+
+    path('lessons', views.my_lesson_list, name='lesson_list' ),
+
     path('lesson/<slug:slug>', views.lessonContent, name='lesson' ),
     path('add-lesson', views.addLesson, name='add_lesson' ),
     

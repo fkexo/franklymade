@@ -20,18 +20,14 @@
     <div class="containe">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">Python Tutorial
+        <h1 class="mt-4 mb-3"><code>Learn</code>{{get_lesson_category}}
         <small></small>
         </h1>
         <h5> </h5>
         <h5></h5>
 
-        <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="#">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Latest in Tech</li> <h6 class="breadcrumb-item active" > coming soon...</h6>
-        </ol>
+        {% include 'tutorial/included/breadcrumb.html' %}
+
 
           <div class="row row-controler">
 
@@ -43,8 +39,10 @@
                 <!-- Search Widget -->
                 <!-- {% include 'franklymade/included/searchbar.html' %} -->
                 <!-- Categories Widget -->
+              
+
                 {% include 'franklymade/included/table_of_content.html' %}
-                
+              
             </div>
         
 

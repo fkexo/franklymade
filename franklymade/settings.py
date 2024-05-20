@@ -33,9 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', 'False') == "False"
+DEBUG = os.environ.get('DEBUG', 'from_env') == "True"
 
-
+print(DEBUG)
 ALLOWED_HOSTS = ['franklymade-nncs.onrender.com', 'localhost',  'http://127.0.0.1:8000']
 
 
@@ -229,6 +229,26 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
+    }
+}
+
+# this for code syntax highlighting for python javaScript, HTML CSS
+CKEDITOR_PLUGINS = [
+    # ...
+    'codesnippet',
+    # ...
+]
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        # ...
+        'codemirror': {
+            'theme': 'material',
+            'modes': ['python', 'javascript', 'html', 'css'],
+            'lineNumbers': True,
+            'lineWrapping': True,
+        },
+        # ...
     }
 }
 

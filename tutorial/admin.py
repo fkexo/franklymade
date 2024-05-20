@@ -19,7 +19,7 @@ class LessonFormAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Author)
-admin.site.register(CourseSeries)
+admin.site.register(CourseSeries, LessonFormAdmin)
 admin.site.register(Lesson, LessonFormAdmin)
 admin.site.register(Category)
 admin.site.register(Tag)

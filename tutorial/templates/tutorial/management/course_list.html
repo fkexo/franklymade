@@ -6,11 +6,11 @@
   {% include 'tutorial/included/tutorial_banner.html' %}
 
   <!-- Page Heading/Breadcrumbs -->
-  <h1 class="mt-4 mb-3">Welcome To FranklyMade 
-      <code>{code:arena}</code>
-  </h1>
-  <h5>Get started learning how to code with python</h5>
-  <h5>Learn web development using django a popular python frame work</h5>
+    <h3 
+        class="mt-4 mb-3"><code>Learn</code> {{ category.cat_name}}
+    </h3>
+  <!-- <h5>Get started learning how to code with python</h5>
+  <h5>Learn web development using django a popular python frame work</h5> -->
 
  {% include 'tutorial/included/breadcrumb.html' %}
 
@@ -26,23 +26,27 @@
 
           <!-- Categories Widget -->
           {% include 'tutorial/included/course_cat.html' %}
-
+    
       </div>
       
 
       <!-- Blog Entries Column -->
       <div class="col-sm-8 mb-3 mb-sm-0">
-          <h3>Featured lessons</h3>
+        
+        <div style="margin-bottom:10x;">
+            <h2 ></h2>
+        </div>
+          
           <div class="row">
 
-              {% for lesson in lesson_list %}
+              {% for courses in courseseries %}
               <div class="col-sm-4 mb-3 ">
                   <div class="card" style="padding: 0; width: auto;">
 
-                      <a href="{% url 'lesson' lesson.slug %}">
-                          <img style="max-height: 80px;" class="card-img-top" src="{% static 'franklymade/images/pexels5.jpg' %}" alt="Card image cap">
+                      <a href="{% url 'course_detail' courses.id %}">
+                          <img style="max-height: 80px;" class="card-img-top" src="{% static 'franklymade/images/pexels2.jpg' %}" alt="Card image cap">
                           <div style="padding: 4px; background-color: #a794b9b8;" class="card-body">
-                              <h6 class="text-white">{{lesson.title}}</h6>
+                              <h6 class="text-white">{{courses.course_title}}</h6>
                           </div>
                       </a>
                   </div>
