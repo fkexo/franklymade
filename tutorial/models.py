@@ -48,7 +48,7 @@ class Category(models.Model):
 
     
 class CourseSeries(models.Model):
-    image = models.ImageField(upload_to='profile_pics/', default='default.jpg')
+    image = models.ImageField(default='default.jpg')
 
     course_title = models.CharField(max_length=200)
     description = models.TextField(default='description')

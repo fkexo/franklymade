@@ -16,7 +16,7 @@ class NewsCategory(models.Model):
 
 
 class News(models.Model):
-    image = models.ImageField(upload_to='profile_pics/', default='default.jpg')
+    image = models.ImageField(default='default.jpg')
     title = models.CharField(max_length=200)
     content = models.TextField(default='content')
     slug = models.SlugField()

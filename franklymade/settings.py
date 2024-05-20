@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', 'from_env') == "True"
+DEBUG = os.environ.get('DEBUG', 'from_env') == "False"
 
 print(DEBUG)
 ALLOWED_HOSTS = ['franklymade-nncs.onrender.com', 'localhost',  'http://127.0.0.1:8000']
@@ -286,9 +286,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
+MEDIA_ROOT = BASE_DIR / 'media'
 # lets tell django where to look for static files in our project folder
 STATICFILES_DIRS =[ os.path.join(
     BASE_DIR, 'franklymade/static',
