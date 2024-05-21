@@ -299,31 +299,31 @@ MEDIA_URL = 'https://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME + '/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Update your media files to use the S3 storage:
-# from django.core.files.storage import default_storage
+from django.core.files.storage import default_storage
 # this like where you put all the media files to be authomaticaly updated on s3 bucket
 
 # # # ...
-# files = [
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\a_screenshot_of_the_google_sheets_update_notification (1).jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\a_graphic_representation_of_the_potential_risks_of_unchecked_ai_development.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\a_screenshot_of_a_user_s_tweet_showing_a_deleted_photo_reappearing_on_their_iphone.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\a_screenshot_of_a_user_s_tweet_showing_a_deleted_photo_reappearing_on_their_iphone.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\autonomous_systems_ai_takes_the_wheel.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\meta_is_developing_a_feature_that_borrows_concepts_from_bereal_and_snapchat.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\sagetap_looks_to_bring_enterprise_software_sales_into_the_21st_century.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\slack_under_fire.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\the_role_of_social_media_in_social_comparison_and_loneliness.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\three_mixed_race_students.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\two_santa_cruz_.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\winamp_is_opening.jpeg',
-#     r'C:\Users\dell\Desktop\mydev\franklymade\media\youtubi_multiview.jpeg'
-# ]
+files = [
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\a_screenshot_of_the_google_sheets_update_notification (1).jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\a_graphic_representation_of_the_potential_risks_of_unchecked_ai_development.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\a_screenshot_of_a_user_s_tweet_showing_a_deleted_photo_reappearing_on_their_iphone.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\a_screenshot_of_a_user_s_tweet_showing_a_deleted_photo_reappearing_on_their_iphone.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\autonomous_systems_ai_takes_the_wheel.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\meta_is_developing_a_feature_that_borrows_concepts_from_bereal_and_snapchat.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\sagetap_looks_to_bring_enterprise_software_sales_into_the_21st_century.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\slack_under_fire.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\the_role_of_social_media_in_social_comparison_and_loneliness.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\three_mixed_race_students.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\two_santa_cruz_.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\winamp_is_opening.jpeg',
+    r'C:\Users\dell\Desktop\mydev\franklymade\media\youtubi_multiview.jpeg'
+]
 
-# for file in files:
-# 	media_file = default_storage.open(file)
-# 	# Do something with the file
-# 	file_contents = media_file.read()
-# 	media_file.close()
+for file in files:
+	media_file = default_storage.open(file)
+	# Do something with the file
+	file_contents = media_file.read()
+	media_file.close()
 
 
 
