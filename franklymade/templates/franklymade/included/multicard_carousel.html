@@ -16,7 +16,7 @@
                     <div class="col-md-4">
                         <div class=" featuredpost-card card card-body">
                             <a href="{% url 'detail_page' post.slug %}">
-                                <img class=" img-fluid" src="{{media_url}}{{post.image}}">
+                                <img class=" img-fluid" src="">
                                 <div class="carousel-caption d-none d-md-block">
                                 <h5>{{post.title}}</h5>
                                 <p>{{post.shortened_news_content|safe}}</p>
@@ -31,7 +31,7 @@
                     <div class="col-md-4">
                         <div class=" featuredpost-card card card-body">
                             <a href="{% url 'detail_page' post.slug %}">
-                                <img class=" img-fluid" src="{{media_url}}{{detail_page.image}}">
+                                <img class=" img-fluid" src="">
                                 <div class="carousel-caption d-none d-md-block">
                                 <h5>{{post.title}}</h5>
                                 <p>{{post.shortened_news_content|safe}}</p>

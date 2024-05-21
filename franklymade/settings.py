@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.environ.get('DEBUG', 'from_env') == "False"
+DEBUG = os.environ.get('DEBUG', 'from_env') == "True"
 
 print(DEBUG)
 ALLOWED_HOSTS = ['franklymade-nncs.onrender.com', 'localhost',  'http://127.0.0.1:8000']
@@ -293,14 +293,18 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_ACCESS_KEY_ID = os.getenv("ACCESS_KEY_ID ")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 
-MEDIA_URL = 'https://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME + '/'
+MEDIA_URL = 'https://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME + '/media'
+
+# For serving static files directly from S3
+
+# Static and media file configuration
 
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Update your media files to use the S3 storage:
 # from django.core.files.storage import default_storage
-# this like where you put all the media files to be authomaticaly updated on s3 bucket
+# # this like where you put all the media files to be authomaticaly updated on s3 bucket
 
 # # # ...
 # files = [
