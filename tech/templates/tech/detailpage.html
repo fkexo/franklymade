@@ -56,7 +56,7 @@
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
               </div>
             <div class="card" style="width: auto;">
-                <img class="card-img-top" src="" alt="Card image cap">
+                <img class="card-img-top" src="{{news_detail.news_image.url|default_if_none:'default-image-url'}}" alt="Card image cap">
                 <div style="background-color: #a794b9b8;" class="card-body">
                   <!-- <h5>featured lesson</h5> -->
                   <p class="card-text">{{news_detail.content|safe}}</p>
@@ -91,7 +91,7 @@
             <div class="col-sm-4">
                 <div class="card" style="width: auto;">
 
-                    <img class="card-img-top" src="{{ news.news_image.url|default_if_none:'default-image-url'}}" alt="News Image">
+                    <img class="card-img-top" src="{{ news_item.news_image.url|default_if_none:'default-image-url'}}" alt="News Image">
                     <div style="background-color: #a794b9b8;" class="card-body">
                         <h5>{{news_item.title}}</h5>
                         <p class="card-text">{{news_item.shortened_news_content|safe}}</p>
