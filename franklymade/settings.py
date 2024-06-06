@@ -290,8 +290,10 @@ EMAIL_HOST_PASSWORD = 'bhtm tcvp cbis hbja'
 # for amazon media file hosting
 AWS_STORAGE_BUCKET_NAME = 'mumbai-franklymade'
 AWS_S3_REGION_NAME = 'ap-south-1'
-AWS_ACCESS_KEY_ID = os.getenv("ACCESS_KEY_ID")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+# print(f"this is the secrete access key{AWS_SECRET_ACCESS_KEY}")
+# print(f"this is the access key ID{AWS_ACCESS_KEY_ID}")
 
 MEDIA_URL = 'https://s3.amazonaws.com/' + AWS_STORAGE_BUCKET_NAME + '/media/'
 

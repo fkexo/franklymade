@@ -23,7 +23,8 @@ class TechNewsForm(forms.ModelForm):
     class Meta:
         model = News
 
-        fields = ('image', "title", 'content', 'slug', 'news_category', "news_source")
+        fields = ("title", 'content', 'slug', 'news_category', "news_source")
+        # fields = ('image', "title", 'content', 'slug', 'news_category', "news_source")
 
 
 

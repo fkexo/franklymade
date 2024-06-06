@@ -71,7 +71,12 @@
             {% for news in news_list %}
               <div class="col-sm-4">
                 <div class="card" style="width: auto;">
+                  {% if news.news_image %}
+                  {{ news.news_image }}
+                  {% else %}
                   <img class="card-img-top" src="" alt="Card image cap">
+                  {% endif %}
+                  
                   <div style="background-color: #a794b9b8;" class="card-body">
                     <h5>{{news.title}}</h5>
                     <p class="card-text">{{ news.shortened_news_content|safe}}</p>
