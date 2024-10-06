@@ -135,7 +135,7 @@ DATABASES = {
     'NAME': 'franklymade_database_0ix4',
     'USER': USER,
     'PASSWORD': PASSWORD, # Replace with the actual password
-    'HOST': 'dpg-cs1bm5lds78s73b56dsg-a',
+    'HOST': 'dpg-cp2eom21hbls739g011g-a',
     'PORT': '5432',
     }
 
