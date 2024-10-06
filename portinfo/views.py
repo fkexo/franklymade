@@ -27,7 +27,7 @@ def portinfo_home(request):
         
         try:
             send_mail(f'{subject}', f'{message}', f'{sender}', ['frankmadu2live@gmail.com'])
-            messages.success(request, f"Hell! {subject}, your message was sent successfully, we would reply you shortly")
+            messages.success(request, f"Hello! {subject}, your message was sent successfully, we would reply you shortly")
             return redirect('portinfo')
 
             

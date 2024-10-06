@@ -132,7 +132,7 @@ PASSWORD = os.getenv('PASSWORD')
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'website-postgresql-franklymade',
+    'NAME': 'franklymade_database_0ix4',
     'USER': USER,
     'PASSWORD': PASSWORD, # Replace with the actual password
     'HOST': 'dpg-cp2eom21hbls739g011g-a',
