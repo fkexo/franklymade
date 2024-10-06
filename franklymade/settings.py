@@ -119,27 +119,27 @@ WSGI_APPLICATION = 'franklymade.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 USER = os.getenv('USER')
 PASSWORD = os.getenv('PASSWORD')
 
-DATABASES = {
-    'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'website_franklymade_oct',
-    'USER': USER,
-    'PASSWORD': PASSWORD, # Replace with the actual password
-    'HOST': 'dpg-cs1ga3u8ii6s73d31spg-a',
-    'PORT': '5432',
-    }
+# DATABASES = {
+#     'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': 'website_franklymade_oct',
+#     'USER': USER,
+#     'PASSWORD': PASSWORD, # Replace with the actual password
+#     'HOST': 'dpg-cs1ga3u8ii6s73d31spg-a',
+#     'PORT': '5432',
+#     }
 
-}
+# }
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 
@@ -157,9 +157,9 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 #         "BACKEND": "django.core.files.storage.FileSystemStorage",
 #     },
 # }
-DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-    }
+# DATABASES = {
+#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+#     }
 
 
 
@@ -326,15 +326,6 @@ STATICFILES_DIRS =[ os.path.join(
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd5j8gbnfmt7lv8',
-#         'USER': '{}'.format(database_USER),
-#         'PASSWORD': '{}'.format(database_PASSWORD),
-#         'HOST': 'ec2-3-212-90-231.compute-1.amazonaws.com'
-#     }
-# }
 
 
 

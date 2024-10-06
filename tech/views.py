@@ -19,7 +19,10 @@ def index(request):
     # recent_lesson = Lesson.objects.order_by('-pk')[0]
     recent_lesson = Lesson.objects.order_by('-pk').first()
     featured_lesson = Lesson.objects.order_by('pk')[0]
-    recent_course_series = CourseSeries.objects.order_by('-pk')[0]
+    recent_course_series = CourseSeries.objects.order_by('-pk').first()
+
+    if recent_course_series is None:
+        recent_course_series = "No recent course found"
     
     featured_posts = News.objects.filter(featured_post=True)
     context = {
