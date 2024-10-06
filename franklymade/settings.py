@@ -119,33 +119,33 @@ WSGI_APPLICATION = 'franklymade.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 USER = os.getenv('USER')
 PASSWORD = os.getenv('PASSWORD')
 
-DATABASES = {
-    'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'franklymade_database_0ix4',
-    'USER': USER,
-    'PASSWORD': PASSWORD, # Replace with the actual password
-    'HOST': 'dpg-cp2eom21hbls739g011g-a',
-    'PORT': '5432',
-    }
+# DATABASES = {
+#     'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': 'website-postgresql-franklymade',
+#     'USER': USER,
+#     'PASSWORD': PASSWORD, # Replace with the actual password
+#     'HOST': 'dpg-cp2eom21hbls739g011g-a',
+#     'PORT': '5432',
+#     }
 
-}
+# }
 
 DATABASE_URL = os.getenv('DATABASE_URL ')
 
 # this will enable database update from development environmet
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 
 
