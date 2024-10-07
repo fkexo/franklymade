@@ -42,7 +42,7 @@ ALLOWED_HOSTS = ['franklymade-nncs.onrender.com', 'localhost',  'http://127.0.0.
 # Application definition
 
 INSTALLED_APPS = [
-    
+    'api',
     'accounts',
     'tech',
     'blog',
@@ -148,9 +148,61 @@ PASSWORD = os.getenv('PASSWORD')
 #     }
 # }
 
+# we are using 2 databases for this project one from the local postgresql and the 
+# the other from the remote database on render 
+# so are are using django database router.
+DATABASE_ROUTERS = ['api.db_router.MyAppRouter']
 
 DATABASE_URL = os.getenv('DATABASE_URL')
-print(f'this is the database_url: {DATABASE_URL}')
+
+from decouple import config
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('LOCAL_DB_NAME'),
+        'USER': config('LOCAL_DB_USER'),
+        'PASSWORD': config('LOCAL_DB_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '5432',
+        
+    },
+    'remote': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('REMOTE_DB_NAME'),
+        'USER': config('REMOTE_DB_USER'),
+        'PASSWORD': config('REMOTE_DB_PASSWORD'),
+        'HOST': config('REMOTE_DB_HOST'),
+        'PORT': '5432',
+    },
+}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'local_db_name',  # Your local database name
+#         'USER': 'your_local_username',
+#         'PASSWORD': 'your_local_password',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     },
+#     'remote': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'website_franklymade_oct',
+#         'USER': 'website_franklymade_oct_user',
+#         'PASSWORD': "JBh3xv8KtEwp4FYsui2FnzBSbXlT6mRk",
+#         'HOST':'dpg-cs1ga3u8ii6s73d31spg-a',
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'sslmode': 'require',  # Ensure SSL is required
+#         },
+#     }
+# }
+
+
+
+
+
 # this will enable database update from development environmet
 # db_from_env = dj_database_url.config()
 # DATABASES['default'].update(db_from_env)
@@ -165,18 +217,6 @@ print(f'this is the database_url: {DATABASE_URL}')
 #         "BACKEND": "django.core.files.storage.FileSystemStorage",
 #     },
 # }
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
-        conn_max_age=600,
-        ssl_require=True
-    )
-}
-# DATABASES = {
-#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-#     }
-
-# Replace the SQLite DATABASES configuration with PostgreSQL:
 # DATABASES = {
 #     'default': dj_database_url.config(
 #         default=os.getenv('DATABASE_URL'),
@@ -184,6 +224,11 @@ DATABASES = {
 #         ssl_require=True
 #     )
 # }
+# DATABASES = {
+#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+#     }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

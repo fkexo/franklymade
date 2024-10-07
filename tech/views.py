@@ -71,7 +71,8 @@ def addTechNews(request):
             return redirect(reverse("course", kwargs={
                 'slug': add_tech_news_form.instance.slug
             }))
-
+    else:
+        return redirect('tech_home')
     # For GET requests or non-authenticated users, show the form
     add_tech_news_form = TechNewsForm()
     context = {'form': add_tech_news_form}

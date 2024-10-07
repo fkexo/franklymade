@@ -9,6 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('tech.urls')),
 
+     path('api/', include('api.urls')),
+
     path('accounts/', include('accounts.urls')),
     
     path('courses/', include('tutorial.urls')),
@@ -16,6 +18,7 @@ urlpatterns = [
     path('franklin/', include('portinfo.urls')),
     
 ]
+
 
 
 
