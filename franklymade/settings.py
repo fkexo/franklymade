@@ -119,12 +119,14 @@ WSGI_APPLICATION = 'franklymade.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 USER = os.getenv('USER')
 PASSWORD = os.getenv('PASSWORD')
@@ -140,12 +142,26 @@ PASSWORD = os.getenv('PASSWORD')
 #     }
 
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'website_franklymade_oct',
+        'USER': USER,
+        'PASSWORD': PASSWORD,
+        'HOST': 'dpg-cp2eom21hbls739g011g-a.oregon-postgres.render.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',  # Ensure SSL is required
+        },
+    }
+}
+
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 # this will enable database update from development environmet
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 
@@ -157,9 +173,9 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 #         "BACKEND": "django.core.files.storage.FileSystemStorage",
 #     },
 # }
-# DATABASES = {
-#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-#     }
+DATABASES = {
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+    }
 
 
 
