@@ -131,37 +131,29 @@ WSGI_APPLICATION = 'franklymade.wsgi.application'
 USER = os.getenv('USER')
 PASSWORD = os.getenv('PASSWORD')
 
-# DATABASES = {
-#     'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'website_franklymade_oct',
-#     'USER': USER,
-#     'PASSWORD': PASSWORD, # Replace with the actual password
-#     'HOST': 'dpg-cs1ga3u8ii6s73d31spg-a',
-#     'PORT': '5432',
-#     }
+
 
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'website_franklymade_oct',
-        'USER': USER,
-        'PASSWORD': PASSWORD,
-        'HOST': 'dpg-cp2eom21hbls739g011g-a.oregon-postgres.render.com',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',  # Ensure SSL is required
-        },
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'website_franklymade_oct',
+#         'USER': 'website_franklymade_oct_user',
+#         'PASSWORD': "JBh3xv8KtEwp4FYsui2FnzBSbXlT6mRk",
+#         'HOST':'dpg-cp2eom21hbls739g011g-a.oregon-postgres.render.com',
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'sslmode': 'require',  # Ensure SSL is required
+#         },
+#     }
+# }
 
 
 DATABASE_URL = os.getenv('DATABASE_URL')
-
+print(f'this is the database_url: {DATABASE_URL}')
 # this will enable database update from development environmet
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 
 
@@ -174,10 +166,24 @@ DATABASES['default'].update(db_from_env)
 #     },
 # }
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
+# DATABASES = {
+#     'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+#     }
 
-
+# Replace the SQLite DATABASES configuration with PostgreSQL:
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.getenv('DATABASE_URL'),
+#         conn_max_age=600,
+#         ssl_require=True
+#     )
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
