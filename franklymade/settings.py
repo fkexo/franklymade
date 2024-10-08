@@ -172,7 +172,7 @@ DATABASES = {
         'NAME': config('REMOTE_DB_NAME'),
         'USER': config('REMOTE_DB_USER'),
         'PASSWORD': config('REMOTE_DB_PASSWORD'),
-        'HOST': config('REMOTE_DB_HOST'),
+        'HOST': "dpg-cs1ga3u8ii6s73d31spg-a.oregon-postgres.render.com",
         'PORT': '5432',
     },
 }
@@ -204,8 +204,8 @@ DATABASES = {
 
 
 # this will enable database update from development environmet
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 
