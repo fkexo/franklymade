@@ -107,7 +107,7 @@ class Command(BaseCommand):
                        
                         news_category=category,
                         news_source="TechCrunch",
-                        external = link
+                        external_link = link
                         
                     )
                     
