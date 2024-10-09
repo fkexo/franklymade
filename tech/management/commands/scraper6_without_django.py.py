@@ -7,6 +7,7 @@ import time
 from urllib.robotparser import RobotFileParser
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, WebDriverException
 
+
 # Define your scraping logic
 def is_scraping_allowed(base_url, user_agent="*"):
     """

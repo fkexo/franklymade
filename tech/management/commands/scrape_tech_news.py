@@ -1,70 +1,135 @@
-import requests
+# tech/management/commands/scrape_tech_news.py
+
+from django.core.management.base import BaseCommand
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
-from datetime import datetime
+import time
+from urllib.robotparser import RobotFileParser
+from selenium.common.exceptions import WebDriverException, TimeoutException
 
-
- #*************To be able Import your News model
-import sys
 import os
-from django.conf import settings
-
-# Add the project base directory to the Python path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-
-# Set up Django settings
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'franklymade.settings')
-
-# Import Django setup
 import django
+
+# Set up Django environment
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'franklymade.settings')
 django.setup()
 
-from tech.models import News  # Now the import should work
-
-# ********** the News model import code ends here************
-
+from tech.models import News, NewsCategory
+from django.utils.text import slugify
 
 
+# import for dynamic download of image into s3bucket
+import requests
+from django.core.files.base import ContentFile 
+
+# handle the data saving error
+from django.db import IntegrityError
 
 
-def scrape_tech_news():
-    url = 'https://techcrunch.com/'  # Change this URL to your preferred tech news site
-    headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
+from . import image_downloader
 
-    response = requests.get(url, headers=headers)
-    # page_content = response.content
-    # response = requests.get(url)
 
-    # Check if the request was successful
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
 
-        # Adjust the selectors based on the website structure
-        articles = soup.find_all('h2', class_='loop-card__title')  # Example selector for TechCrunch
-        print(articles)
-        for article in articles:
-            title = article.get_text(strip=True)
-            link = article.find('a')['href']
-            print(title)
 
-            # Create a description or fetch additional data if needed
-            description = "Auto-scraped from TechCrunch"
-            pub_date = datetime.now()  # You can replace this with the actual published date if available
+class Command(BaseCommand):
+    help = 'Scrapes tech news from TechCrunch'
 
-            # Check if this news already exists to avoid duplicates
-            if not News.objects.filter(title=title).exists():
-                News.objects.create(
-                    title=title,
-                    link=link,
-                    description=description,
-                    pup_date=pub_date
-                )
-                print(f'Successfully added: {title}')
-            else:
-                print(f'News already exists: {title}')
-    else:
-        print(f'Failed to retrieve news: {response.status_code}')
+    def handle(self, *args, **kwargs):
+        self.scrape_tech_news()
 
-# Call the function
-scrape_tech_news()
+    def is_scraping_allowed(self, base_url, user_agent="*"):
+        robots_url = f"{base_url}/robots.txt"
+        robot_parser = RobotFileParser()
+        robot_parser.set_url(robots_url)
+        robot_parser.read()
+        return robot_parser.can_fetch(user_agent, base_url)
+
+    def scrape_tech_news(self):
+        base_url = "https://techcrunch.com/"
+
+
+        if not self.is_scraping_allowed(base_url):
+            self.stdout.write(self.style.WARNING("Scraping is not allowed by robots.txt."))
+            return
+
+        chrome_options = Options()
+        # chrome_options.add_argument("--headless")  # Uncomment for headless mode
+        driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+
+        try:
+            driver.get(base_url)
+            time.sleep(5)  # Adjust as needed
+            page_content = driver.page_source
+            soup = BeautifulSoup(page_content, 'html.parser')
+            news_articles = soup.find_all('li', class_='wp-block-post')
+
+            if not news_articles:
+                self.stdout.write(self.style.WARNING("No articles found."))
+                return
+
+            for article in news_articles:
+                try:
+                    title_element = article.find('h3', class_='loop-card__title')
+                    link_element = title_element.find('a', class_='loop-card__title-link') if title_element else None
+                    image_element = article.find('img')
+                    content_element= article.find("p", class_='loop-card__detail')
+
+                    title = title_element.get_text(strip=True) if title_element else "No title found"
+                    link = link_element['href'] if link_element else "No link found"
+                    image_url = image_element['src'] if image_element else "No image found"
+                    content = content_element.get_text(strip=True) if content_element else "use the link to view"
+                    # Truncate the title if it exceeds 200 characters
+                    if len(title) > 200:
+                        title = title[:50]
+
+                    # if len(image_url) > 500:
+                    
+
+                    # Ensure slug is unique
+                    slug = slugify(title)
+                    existing_news = News.objects.filter(slug=slug).first()
+                    if existing_news:
+                        self.stdout.write(self.style.WARNING(f"Skipping duplicate news item: {title}"))
+                        continue
+
+                    # Handle news category
+                    category, created = NewsCategory.objects.get_or_create(title="Tech News")
+                    
+                    #downloader downloads image from url to s3bucket
+                    
+                    news_item = News.objects.create(
+                        title=title,
+                        slug=slug,
+                        content="",  # You can customize this based on your needs
+                       
+                        news_category=category,
+                        news_source="TechCrunch",
+                        external = link
+                        
+                    )
+                    
+                    image_downloader.save_image_from_url(image_url, news_item)
+
+                    news_item.save()
+                    try:
+                        self.stdout.write(self.style.SUCCESS(f"Saved: {news_item.title}"))
+                        # Your code to save the article data
+                    except IntegrityError as e:
+                        print(f"Error saving article: {e}")
+
+
+                    
+
+                except Exception as e:
+                    self.stdout.write(self.style.ERROR(f"Error extracting article data: {e}"))
+                    continue
+                from django.db import IntegrityError
+
+               
+        except (WebDriverException, TimeoutException, IntegrityError ) as e:
+            self.stdout.write(self.style.ERROR(f"Error loading the page: {e}"))
+        finally:
+            driver.quit()

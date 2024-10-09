@@ -17,6 +17,8 @@ class News(models.Model):
     news_category = models.ForeignKey(NewsCategory, on_delete=models.CASCADE, related_name='news')
     news_source = models.CharField(max_length=200, blank=True, null=True)
     featured_post = models.BooleanField(default=False)
+    external_link = models.CharField(max_length=500, default='source link', blank=True, null=True)
+
 
     def __str__(self):
         return f"{self.title} ({self.news_category.title})"
