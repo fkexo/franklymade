@@ -1,0 +1,13 @@
+<div> 
+    <nav style="" aria-label="breadcrumb">
+      <ol class=" text-center mybreadcrumb-2 breadcrumb">
+        {% for category in news_category  %}
+        <li class=" small-btn breadcrumb-item"><a href="{% url 'news_by_category' category.slug %}">{{category.title}}</a></li>
+        {% endfor %}
+         <!-- <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Block chain technology</a></li>
+        <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Full stack web development</a></li>
+        <li class=" small-btn breadcrumb-item active" aria-current="pag"><a href="">Smart contract</a></li> -->
+        
+      </ol>
+    </nav>
+</div>

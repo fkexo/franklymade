@@ -7,7 +7,13 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('tech_update', views.techHome, name='tech_home'),
     path('tech_update/<slug:slug>', views.detailPage, name='detail_page'),
-    path('add_tech_news', views.addTechNews, name = 'add_tech_news')
+    path('add_tech_news', views.addTechNews, name = 'add_tech_news'),
+
+    # tech news category item list 
+    path('categories/', views.news_category_list, name='news_category_list'),  # All categories
+    path('category/<slug:category_slug>/', views.news_by_category, name='news_by_category'),  # News by category
+    # path('news/<slug:slug>/', views.news_detail, name='news_detail'),  # Specific news item detail
+
 
     
 ]
